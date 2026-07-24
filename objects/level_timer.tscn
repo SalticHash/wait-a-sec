@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://d1rfie6qhpdlc"]
+
+[ext_resource type="Script" uid="uid://cxdhhvjp0k8qn" path="res://scripts/level_timer.gd" id="1_ln13c"]
+[ext_resource type="Texture2D" uid="uid://bnevv2qxbhuia" path="res://textures/level_timer.png" id="1_xckh2"]
+[ext_resource type="Texture2D" uid="uid://cwckp0nv8mitr" path="res://textures/numberDisplay_big.png" id="2_ln13c"]
+
+[node name="level_timer" type="Node2D" unique_id=1695177744]
+script = ExtResource("1_ln13c")
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1745641899]
+texture = ExtResource("1_xckh2")
+centered = false
+
+[node name="units" type="Sprite2D" parent="." unique_id=1443422285]
+position = Vector2(15, 3)
+texture = ExtResource("2_ln13c")
+centered = false
+hframes = 10
+
+[node name="tens" type="Sprite2D" parent="." unique_id=2110520908]
+position = Vector2(3, 3)
+texture = ExtResource("2_ln13c")
+centered = false
+hframes = 10

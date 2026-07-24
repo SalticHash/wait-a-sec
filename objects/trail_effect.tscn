@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bh2b8k7xb61j6"]
+
+[ext_resource type="Texture2D" uid="uid://dw76ceson20ng" path="res://textures/textureChunk_1.png" id="1_x7w8b"]
+[ext_resource type="Script" uid="uid://cbb3timp8hm3q" path="res://scripts/trail_effect.gd" id="2_of71w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of71w"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(9, 27, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rnk3r"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(0, 27, 9, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ostoq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of71w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rnk3r")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="trail_effect" type="AnimatedSprite2D" unique_id=1728405040]
+sprite_frames = SubResource("SpriteFrames_ostoq")
+autoplay = "default"
+centered = false
+script = ExtResource("2_of71w")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

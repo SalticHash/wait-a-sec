@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cvvpn2ulskav8"]
+
+[ext_resource type="Texture2D" uid="uid://dw76ceson20ng" path="res://textures/textureChunk_1.png" id="1_0uvjf"]
+[ext_resource type="PackedScene" uid="uid://gvdl0lohtbfv" path="res://objects/board.tscn" id="1_kr3q7"]
+[ext_resource type="PackedScene" uid="uid://d1rfie6qhpdlc" path="res://objects/level_timer.tscn" id="2_s35nk"]
+[ext_resource type="PackedScene" uid="uid://b572syq1rj7s5" path="res://objects/player.tscn" id="4_wp0oj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostoq"]
+atlas = ExtResource("1_0uvjf")
+region = Rect2(54, 0, 9, 9)
+
+[node name="game" type="Node" unique_id=106734253]
+
+[node name="bg" type="Sprite2D" parent="." unique_id=1444890952]
+position = Vector2(-18, -18)
+scale = Vector2(21, 21)
+texture = SubResource("AtlasTexture_ostoq")
+centered = false
+
+[node name="board" parent="." unique_id=531229317 instance=ExtResource("1_kr3q7")]
+
+[node name="level_timer" parent="." unique_id=1695177744 instance=ExtResource("2_s35nk")]
+position = Vector2(63, 9)
+
+[node name="level_objects" type="Node" parent="." unique_id=1984010725]
+
+[node name="player" parent="." unique_id=1674897621 instance=ExtResource("4_wp0oj")]
+position = Vector2(36, 36)
