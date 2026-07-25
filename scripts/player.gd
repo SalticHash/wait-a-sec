@@ -2,7 +2,7 @@ extends BoardElement2D
 
 func _physics_process(_delta: float) -> void:
 	super(_delta)
-	if ScrGlobal.level_time > 0:
+	if ScrGlobal.level_time > 0 and !ScrGlobal.cutscene:
 		_movement()
 
 

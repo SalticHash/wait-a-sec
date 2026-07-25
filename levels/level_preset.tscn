@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://d1rfie6qhpdlc" path="res://objects/level_timer.tscn" id="2_vynm1"]
 [ext_resource type="PackedScene" uid="uid://b572syq1rj7s5" path="res://objects/player.tscn" id="3_62vhw"]
 [ext_resource type="PackedScene" uid="uid://cnai42qg7u723" path="res://objects/goal.tscn" id="4_vynm1"]
+[ext_resource type="Texture2D" uid="uid://bnevv2qxbhuia" path="res://textures/level_timer.png" id="6_lm05e"]
+[ext_resource type="Texture2D" uid="uid://cwckp0nv8mitr" path="res://textures/numberDisplay_big.png" id="7_pkye5"]
+[ext_resource type="Texture2D" uid="uid://cow8gbbremft" path="res://textures/tutorial_text.png" id="8_p15h7"]
+[ext_resource type="Texture2D" uid="uid://sfqjbgj3pfh4" path="res://textures/level_text.png" id="9_uydtg"]
 
 [node name="level_preset" type="Node2D" unique_id=707018245]
 script = ExtResource("1_62vhw")
@@ -23,3 +27,40 @@ position = Vector2(45, 99)
 
 [node name="goal" parent="level_objects" unique_id=1956486281 instance=ExtResource("4_vynm1")]
 position = Vector2(99, 45)
+
+[node name="enter_level_popup" type="Node2D" parent="." unique_id=1978777192]
+z_index = 1
+
+[node name="Cover" type="ColorRect" parent="enter_level_popup" unique_id=1411949169]
+offset_right = 153.0
+offset_bottom = 153.0
+color = Color(0, 0, 0, 1)
+
+[node name="bg" type="Sprite2D" parent="enter_level_popup" unique_id=612338061]
+position = Vector2(63, 72)
+texture = ExtResource("6_lm05e")
+centered = false
+
+[node name="units" type="Sprite2D" parent="enter_level_popup" unique_id=1973338694]
+position = Vector2(78, 75)
+texture = ExtResource("7_pkye5")
+centered = false
+hframes = 10
+
+[node name="tens" type="Sprite2D" parent="enter_level_popup" unique_id=2082766428]
+position = Vector2(66, 75)
+texture = ExtResource("7_pkye5")
+centered = false
+hframes = 10
+
+[node name="TutorialText" type="Sprite2D" parent="enter_level_popup" unique_id=573539929]
+visible = false
+position = Vector2(41, 54)
+texture = ExtResource("8_p15h7")
+centered = false
+
+[node name="LevelText" type="Sprite2D" parent="enter_level_popup" unique_id=1063507228]
+visible = false
+position = Vector2(54, 54)
+texture = ExtResource("9_uydtg")
+centered = false

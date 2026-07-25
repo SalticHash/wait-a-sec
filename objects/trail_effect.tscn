@@ -1,7 +1,33 @@
 [gd_scene format=3 uid="uid://bh2b8k7xb61j6"]
 
+[ext_resource type="Texture2D" uid="uid://b0hfluv3byd88" path="res://textures/logo_trail_1.png" id="1_etd7c"]
 [ext_resource type="Texture2D" uid="uid://dw76ceson20ng" path="res://textures/textureChunk_1.png" id="1_x7w8b"]
 [ext_resource type="Script" uid="uid://cbb3timp8hm3q" path="res://scripts/trail_effect.gd" id="2_of71w"]
+[ext_resource type="Texture2D" uid="uid://34jldntxssjd" path="res://textures/logo_trail_2.png" id="2_ttv0o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0u5j"]
+atlas = ExtResource("1_etd7c")
+region = Rect2(0, 0, 117, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q80l"]
+atlas = ExtResource("1_etd7c")
+region = Rect2(117, 0, 117, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdg8n"]
+atlas = ExtResource("1_etd7c")
+region = Rect2(234, 0, 117, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7ny0"]
+atlas = ExtResource("2_ttv0o")
+region = Rect2(0, 0, 135, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydio0"]
+atlas = ExtResource("2_ttv0o")
+region = Rect2(135, 0, 135, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gj4ls"]
+atlas = ExtResource("2_ttv0o")
+region = Rect2(270, 0, 135, 54)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_of71w"]
 atlas = ExtResource("1_x7w8b")
@@ -21,6 +47,34 @@ region = Rect2(0, 36, 9, 9)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ostoq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0u5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q80l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdg8n")
+}],
+"loop": 0,
+"name": &"logo_trail_1",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7ny0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydio0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gj4ls")
+}],
+"loop": 0,
+"name": &"logo_trail_2",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_of71w")
@@ -46,7 +100,7 @@ animations = [{
 
 [node name="trail_effect" type="AnimatedSprite2D" unique_id=1728405040]
 sprite_frames = SubResource("SpriteFrames_ostoq")
-animation = &"player"
+animation = &"logo_trail_1"
 centered = false
 script = ExtResource("2_of71w")
 

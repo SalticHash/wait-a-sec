@@ -5,7 +5,6 @@
 [ext_resource type="Shader" uid="uid://bg1vf2q456agy" path="res://main_menu/main_menu.gdshader" id="2_3f7m4"]
 [ext_resource type="AudioStream" uid="uid://dg4eabjwkx0o5" path="res://audio/snd_clock_1.ogg" id="4_6tl50"]
 [ext_resource type="AudioStream" uid="uid://cr2ntxmg6ydax" path="res://audio/snd_clock_2.ogg" id="5_t6bnd"]
-[ext_resource type="Texture2D" uid="uid://dw76ceson20ng" path="res://textures/textureChunk_1.png" id="6_6tl50"]
 [ext_resource type="Texture2D" uid="uid://dc7lhfe7vs64c" path="res://textures/start_text.png" id="7_t6bnd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jh3y0"]
@@ -136,55 +135,46 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Trail:position")
-tracks/4/interp = 0
+tracks/4/path = NodePath("StartText:modulate")
+tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0.1, 0.35, 0.85, 1.35, 1.85, 2.35, 2.85),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(18, -36), Vector2(18, -27), Vector2(18, -18), Vector2(18, -9), Vector2(18, 0), Vector2(18, 9), Vector2(18, 18)]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Trail")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0.25, 0.75, 1.21, 1.71, 2.23, 2.73),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"values": [{
-"args": [&"appear", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"appear", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"appear", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"appear", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"appear", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"appear", 1.0, false],
-"method": &"play"
-}]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("StartText:modulate")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
 "times": PackedFloat32Array(4.5, 6.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.25, 0.83, 1.3, 1.75, 2.31, 2.8, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": ["logo_trail_1"],
+"method": &"_instantiate_node"
+}, {
+"args": ["logo_trail_1"],
+"method": &"_instantiate_node"
+}, {
+"args": ["logo_trail_1"],
+"method": &"_instantiate_node"
+}, {
+"args": ["logo_trail_1"],
+"method": &"_instantiate_node"
+}, {
+"args": ["logo_trail_1"],
+"method": &"_instantiate_node"
+}, {
+"args": ["logo_trail_1"],
+"method": &"_instantiate_node"
+}, {
+"args": ["logo_trail_2"],
+"method": &"_instantiate_node"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_og6xe"]
@@ -193,42 +183,13 @@ _data = {
 &"enter": SubResource("Animation_6at21")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6bnd"]
-atlas = ExtResource("6_6tl50")
-region = Rect2(9, 27, 9, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ia84y"]
-atlas = ExtResource("6_6tl50")
-region = Rect2(0, 27, 9, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6at21"]
-atlas = ExtResource("6_6tl50")
-region = Rect2(36, 36, 9, 9)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_3f7m4"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t6bnd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ia84y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6at21")
-}],
-"loop": 0,
-"name": &"appear",
-"speed": 8.0
-}]
-
 [node name="MainMenu" type="Node2D" unique_id=1284493117]
 script = ExtResource("1_d3a7t")
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=640675470]
+z_index = 1
 material = SubResource("ShaderMaterial_jh3y0")
 position = Vector2(18, -36)
-scale = Vector2(1.0123012, 1.0123012)
 texture = ExtResource("1_oa53l")
 centered = false
 
@@ -236,14 +197,6 @@ centered = false
 libraries/ = SubResource("AnimationLibrary_og6xe")
 
 [node name="TimerSounds" type="AudioStreamPlayer" parent="." unique_id=378312009]
-
-[node name="Trail" type="AnimatedSprite2D" parent="." unique_id=80441448]
-position = Vector2(18, -36)
-sprite_frames = SubResource("SpriteFrames_3f7m4")
-animation = &"appear"
-frame = 2
-frame_progress = 1.0
-centered = false
 
 [node name="StartText" type="Sprite2D" parent="." unique_id=999143273]
 modulate = Color(1, 1, 1, 0)

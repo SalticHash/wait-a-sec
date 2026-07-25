@@ -5,6 +5,7 @@ const TRAIL_SCENE: PackedScene = preload("res://objects/trail_effect.tscn")
 var level_time: int = 99
 var won: bool = false
 var current_level = preload("res://levels/lvl_tutorial.tscn")
+var cutscene: bool = false
 
 func _reload_level() -> void:
 	var instance = current_level.instantiate()
