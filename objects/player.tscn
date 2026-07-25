@@ -6,3 +6,6 @@
 [node name="player" unique_id=1674897621 instance=ExtResource("1_eqqp1")]
 script = ExtResource("2_ykyjo")
 life_time = 0
+
+[node name="collision" parent="area" parent_id_path=PackedInt32Array(118502564) index="0" unique_id=716182316]
+visible = true

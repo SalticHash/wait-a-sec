@@ -1,4 +1,4 @@
-extends Sprite2D
+extends Node2D
 class_name BoardElement2D
 
 @export var life_time: int = 5

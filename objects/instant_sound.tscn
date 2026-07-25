@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://vbtuyvnyvbbm"]
+
+[ext_resource type="AudioStream" uid="uid://dg4eabjwkx0o5" path="res://audio/snd_clock_1.ogg" id="1_mqphi"]
+[ext_resource type="Script" uid="uid://c0l4wp3apvg3c" path="res://scripts/instant_sound.gd" id="2_451fw"]
+
+[node name="instant_sound" type="AudioStreamPlayer" unique_id=444537050]
+stream = ExtResource("1_mqphi")
+script = ExtResource("2_451fw")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
