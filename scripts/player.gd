@@ -2,7 +2,7 @@ extends BoardElement2D
 
 func _physics_process(_delta: float) -> void:
 	super(_delta)
-	if ScrGlobal.level_time > 0 and !ScrGlobal.cutscene:
+	if visible and !ScrGlobal.cutscene:
 		_movement()
 
 
@@ -31,7 +31,7 @@ func _movement() -> void:
 
 
 func _efective_move() -> void:
-	_instantiate_node(ScrGlobal.TRAIL_SCENE)
+	_create_trail()
 	ScrGlobal.level_time -= 1
 
 
@@ -47,21 +47,7 @@ func _spr_dir_reset() -> void:
 	$sprite.flip_h = false
 
 
-func _instantiate_node(packed_scene: PackedScene) -> void:
-	var instance: Node = packed_scene.instantiate()
-	get_parent().add_child(instance)
-	instance.position = position
-	instance.play("player")
-
-
-func _disappear() -> void:
-	if not visible:
-		return
-	_instantiate_node(ScrGlobal.TRAIL_SCENE)
-	super()
-
-
 func _on_touch_goal(_area: Area2D) -> void:
-	_instantiate_node(ScrGlobal.TRAIL_SCENE)
+	_create_trail()
+	_disappear()
 	ScrGlobal.won = true
-	queue_free()

@@ -2,19 +2,17 @@ extends Node2D
 class_name BoardElement2D
 
 @export var life_time: int = 5
-@export var exceptions: Array[int] = []
+@export var trail_anim: String = "player"
 
 func _ready() -> void:
 	if ScrGlobal.level_time <= life_time:
 		_disappear()
 
+
 func _physics_process(_delta: float) -> void:
 	if ScrGlobal.level_time == life_time:
 		_disappear()
-	if len(exceptions) > 0:
-		for exception in exceptions:
-			if exception == ScrGlobal.level_time:
-				_appear()
+
 
 func _disappear() -> void:
 	if not visible:
@@ -22,6 +20,15 @@ func _disappear() -> void:
 	$area.set_deferred("monitoring", false)
 	$area.set_deferred("monitorable", false)
 	visible = false
+	_create_trail()
+
+
+func _create_trail() -> void:
+	var instance = ScrGlobal.TRAIL_SCENE.instantiate()
+	get_parent().add_child(instance)
+	instance.position = position
+	instance.play(trail_anim)
+
 
 func _appear() -> void:
 	if visible:

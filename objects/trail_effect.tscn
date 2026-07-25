@@ -5,6 +5,18 @@
 [ext_resource type="Script" uid="uid://cbb3timp8hm3q" path="res://scripts/trail_effect.gd" id="2_of71w"]
 [ext_resource type="Texture2D" uid="uid://34jldntxssjd" path="res://textures/logo_trail_2.png" id="2_ttv0o"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1sqb"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(18, 45, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jhx6"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(9, 45, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yigm"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(0, 45, 9, 9)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0u5j"]
 atlas = ExtResource("1_etd7c")
 region = Rect2(0, 0, 117, 36)
@@ -45,8 +57,46 @@ region = Rect2(9, 36, 9, 9)
 atlas = ExtResource("1_x7w8b")
 region = Rect2(0, 36, 9, 9)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8gnm"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(27, 36, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gkt2i"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(18, 36, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1i74p"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(45, 27, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjruk"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(36, 27, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ecxf"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(27, 27, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0klyn"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(18, 27, 9, 9)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ostoq"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1sqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jhx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yigm")
+}],
+"loop": 0,
+"name": &"goal",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x0u5j")
@@ -96,11 +146,44 @@ animations = [{
 "loop": 0,
 "name": &"wall",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8gnm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gkt2i")
+}],
+"loop": 0,
+"name": &"wall_cyan",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1i74p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjruk")
+}],
+"loop": 0,
+"name": &"wall_orange",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ecxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0klyn")
+}],
+"loop": 1,
+"name": &"wallgreens",
+"speed": 5.0
 }]
 
 [node name="trail_effect" type="AnimatedSprite2D" unique_id=1728405040]
 sprite_frames = SubResource("SpriteFrames_ostoq")
-animation = &"logo_trail_1"
+animation = &"goal"
 centered = false
 script = ExtResource("2_of71w")
 

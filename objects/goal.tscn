@@ -12,6 +12,7 @@ filter_clip = true
 
 [node name="goal" unique_id=1956486281 instance=ExtResource("1_i726j")]
 life_time = 0
+trail_anim = "goal"
 
 [node name="area" parent="." index="0" unique_id=118502564]
 collision_layer = 1

@@ -1,4 +1,5 @@
 extends BoardElement2D
+class_name WallNumber
 
 func _ready() -> void:
 	super()
@@ -12,17 +13,3 @@ func _ready() -> void:
 		$tens.queue_free()
 		$units.position.x = 3
 		$units.frame = life_time
-
-
-func _instantiate_node(packed_scene: PackedScene) -> void:
-	var instance: Node = packed_scene.instantiate()
-	get_parent().add_child(instance)
-	instance.position = position
-	instance.play("wall")
-
-
-func _disappear() -> void:
-	if not visible:
-		return
-	_instantiate_node(ScrGlobal.TRAIL_SCENE)
-	super()
