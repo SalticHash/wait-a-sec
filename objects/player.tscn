@@ -3,9 +3,31 @@
 [ext_resource type="PackedScene" uid="uid://ddqanxrilt141" path="res://objects/BoardElement2D.tscn" id="1_eqqp1"]
 [ext_resource type="Script" uid="uid://b4t148aucb60d" path="res://scripts/player.gd" id="2_ykyjo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
+size = Vector2(0, 0)
+
 [node name="player" unique_id=1674897621 instance=ExtResource("1_eqqp1")]
 script = ExtResource("2_ykyjo")
 life_time = 0
 
-[node name="collision" parent="area" parent_id_path=PackedInt32Array(118502564) index="0" unique_id=716182316]
-visible = true
+[node name="interaction_points" type="Area2D" parent="." index="2" unique_id=2030416467]
+
+[node name="up" type="CollisionShape2D" parent="interaction_points" index="0" unique_id=1430853635]
+position = Vector2(4, -5)
+shape = SubResource("RectangleShape2D_ostoq")
+metadata/_edit_lock_ = true
+
+[node name="down" type="CollisionShape2D" parent="interaction_points" index="1" unique_id=1649960263]
+position = Vector2(4, 13)
+shape = SubResource("RectangleShape2D_ostoq")
+metadata/_edit_lock_ = true
+
+[node name="left" type="CollisionShape2D" parent="interaction_points" index="2" unique_id=1178604547]
+position = Vector2(-5, 4)
+shape = SubResource("RectangleShape2D_ostoq")
+metadata/_edit_lock_ = true
+
+[node name="right" type="CollisionShape2D" parent="interaction_points" index="3" unique_id=1643805086]
+position = Vector2(13, 4)
+shape = SubResource("RectangleShape2D_ostoq")
+metadata/_edit_lock_ = true
