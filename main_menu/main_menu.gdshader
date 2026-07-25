@@ -1,0 +1,14 @@
+shader_type canvas_item;
+
+uniform vec4 color: source_color;
+
+void fragment() {
+	if (COLOR.a == 1.0) {
+		COLOR.rgb = mix(COLOR.rgba, color, color.a).rgb;
+	}
+}
+
+//void light() {
+//	// Called for every pixel for every light affecting the CanvasItem.
+//	// Uncomment to replace the default light processing function with this one.
+//}
