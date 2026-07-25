@@ -19,13 +19,13 @@ func _physics_process(_delta: float) -> void:
 func _disappear() -> void:
 	if not visible:
 		return
-	$area.monitoring = false
-	$area.monitorable = false
+	$area.set_deferred("monitoring", false)
+	$area.set_deferred("monitorable", false)
 	visible = false
 
 func _appear() -> void:
 	if visible:
 		return
-	$area.monitoring = true
-	$area.monitorable = true
+	$area.set_deferred("monitoring", true)
+	$area.set_deferred("monitorable", true)
 	visible = true

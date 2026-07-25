@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cbbm4rie743u"]
+
+[ext_resource type="Script" uid="uid://ba80lo1cepflw" path="res://scripts/level_preset.gd" id="1_62vhw"]
+[ext_resource type="PackedScene" uid="uid://gvdl0lohtbfv" path="res://objects/board.tscn" id="1_g14go"]
+[ext_resource type="PackedScene" uid="uid://d1rfie6qhpdlc" path="res://objects/level_timer.tscn" id="2_vynm1"]
+[ext_resource type="PackedScene" uid="uid://b572syq1rj7s5" path="res://objects/player.tscn" id="3_62vhw"]
+[ext_resource type="PackedScene" uid="uid://cnai42qg7u723" path="res://objects/goal.tscn" id="4_vynm1"]
+
+[node name="level_preset" type="Node2D" unique_id=707018245]
+script = ExtResource("1_62vhw")
+
+[node name="board" parent="." unique_id=531229317 instance=ExtResource("1_g14go")]
+metadata/_edit_lock_ = true
+
+[node name="level_timer" parent="." unique_id=1695177744 instance=ExtResource("2_vynm1")]
+position = Vector2(63, 9)
+metadata/_edit_lock_ = true
+
+[node name="level_objects" type="Node" parent="." unique_id=371145211]
+
+[node name="player" parent="level_objects" unique_id=1674897621 instance=ExtResource("3_62vhw")]
+position = Vector2(45, 99)
+
+[node name="goal" parent="level_objects" unique_id=1956486281 instance=ExtResource("4_vynm1")]
+position = Vector2(99, 45)

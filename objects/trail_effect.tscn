@@ -11,6 +11,14 @@ region = Rect2(9, 27, 9, 9)
 atlas = ExtResource("1_x7w8b")
 region = Rect2(0, 27, 9, 9)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_etd7c"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(9, 36, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttv0o"]
+atlas = ExtResource("1_x7w8b")
+region = Rect2(0, 36, 9, 9)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ostoq"]
 animations = [{
 "frames": [{
@@ -21,13 +29,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_rnk3r")
 }],
 "loop": 0,
-"name": &"default",
+"name": &"player",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_etd7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttv0o")
+}],
+"loop": 0,
+"name": &"wall",
 "speed": 8.0
 }]
 
 [node name="trail_effect" type="AnimatedSprite2D" unique_id=1728405040]
 sprite_frames = SubResource("SpriteFrames_ostoq")
-autoplay = "default"
+animation = &"player"
 centered = false
 script = ExtResource("2_of71w")
 

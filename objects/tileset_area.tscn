@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ccmnehrxbnwib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
+size = Vector2(9, 9)
+
+[node name="tileset_area" type="Area2D" unique_id=301639268]
+position = Vector2(-5, -5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="collision" type="CollisionShape2D" parent="." unique_id=1662210229]
+position = Vector2(4.5, 4.5)
+shape = SubResource("RectangleShape2D_ostoq")

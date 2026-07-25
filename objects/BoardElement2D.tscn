@@ -17,6 +17,8 @@ filter_clip = true
 script = ExtResource("1_t4kao")
 
 [node name="area" type="Area2D" parent="." unique_id=118502564]
+collision_layer = 2
+collision_mask = 2
 
 [node name="collision" type="CollisionShape2D" parent="area" unique_id=716182316]
 visible = false
