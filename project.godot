@@ -12,7 +12,7 @@ config_version=5
 
 config/name="wait-a-sec-"
 config/description="A video game for the GMTK game yam, it's about countdowns..."
-config/version="0.8.0"
+config/version="0.8.1"
 run/main_scene="uid://cvvpn2ulskav8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
