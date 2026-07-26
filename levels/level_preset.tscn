@@ -7,14 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cnai42qg7u723" path="res://objects/goal.tscn" id="4_vynm1"]
 [ext_resource type="Texture2D" uid="uid://mh0la3vex32a" path="res://textures/numberDisplay_big_light.png" id="6_p15h7"]
 [ext_resource type="Texture2D" uid="uid://cow8gbbremft" path="res://textures/tutorial_text.png" id="8_p15h7"]
+[ext_resource type="Texture2D" uid="uid://bcqd3bwsice82" path="res://textures/continue_tip.png" id="9_rywhe"]
 [ext_resource type="Texture2D" uid="uid://sfqjbgj3pfh4" path="res://textures/level_text.png" id="9_uydtg"]
 [ext_resource type="AudioStream" uid="uid://bxu21s0qnpep" path="res://audio/snd_reset.ogg" id="10_pkye5"]
-[ext_resource type="FontFile" uid="uid://cjy05tv16y7pe" path="res://font/font.png" id="11_p15h7"]
+[ext_resource type="Texture2D" uid="uid://mf35pog3hbpg" path="res://textures/undo_tip.png" id="11_4358y"]
+[ext_resource type="Texture2D" uid="uid://bqs7kqs8lptjv" path="res://textures/score_label.png" id="12_njk0a"]
 [ext_resource type="AudioStream" uid="uid://thwb20kt303c" path="res://audio/clink.wav" id="12_uydtg"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_jh3y0"]
-font = ExtResource("11_p15h7")
-font_size = 5
+[ext_resource type="Texture2D" uid="uid://dpaoxvx2qb4hr" path="res://font/numbers.png" id="13_11dht"]
 
 [node name="level_preset" type="Node2D" unique_id=707018245]
 script = ExtResource("1_62vhw")
@@ -67,39 +66,35 @@ position = Vector2(56, 43)
 texture = ExtResource("9_uydtg")
 centered = false
 
-[node name="ContinueTip" type="Label" parent="enter_level_popup" unique_id=52415057]
-offset_left = 21.0
-offset_top = 104.0
-offset_right = 136.0
-offset_bottom = 109.0
-text = "PRESS SPACE TO CONTINUE"
-label_settings = SubResource("LabelSettings_jh3y0")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="ContinueTip" type="Sprite2D" parent="enter_level_popup" unique_id=1935786556]
+position = Vector2(20, 103)
+texture = ExtResource("9_rywhe")
+centered = false
 
 [node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=455021973]
 stream = ExtResource("10_pkye5")
 
-[node name="UndoTip" type="Label" parent="." unique_id=1218878645]
-offset_left = 40.0
-offset_top = 133.0
-offset_right = 115.0
-offset_bottom = 138.0
-text = "UNDO OR RESTART"
-label_settings = SubResource("LabelSettings_jh3y0")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="UndoTip" type="Sprite2D" parent="." unique_id=1150083987]
+position = Vector2(39, 132)
+texture = ExtResource("11_4358y")
+centered = false
 
-[node name="Score" type="Label" parent="." unique_id=705968426]
-z_index = 1
-offset_left = 40.0
-offset_top = 142.0
-offset_right = 115.0
-offset_bottom = 147.0
-text = "SCORE:0"
-label_settings = SubResource("LabelSettings_jh3y0")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Score" type="Sprite2D" parent="." unique_id=218367654]
+position = Vector2(57, 141)
+texture = ExtResource("12_njk0a")
+centered = false
+
+[node name="tens" type="Sprite2D" parent="Score" unique_id=1036844252]
+position = Vector2(30, 1)
+texture = ExtResource("13_11dht")
+centered = false
+hframes = 10
+
+[node name="units" type="Sprite2D" parent="Score" unique_id=1462375064]
+position = Vector2(35, 1)
+texture = ExtResource("13_11dht")
+centered = false
+hframes = 10
 
 [node name="goal_sound" type="AudioStreamPlayer" parent="." unique_id=601905936]
 stream = ExtResource("12_uydtg")

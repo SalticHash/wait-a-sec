@@ -22,7 +22,6 @@ func _physics_process(_delta: float) -> void:
 
 func _return() -> void:
 	var still_got = had_key.pop_back()
-	print(still_got)
 	if still_got != got: ScrGlobal.keys_left += 1
 	got = still_got
 

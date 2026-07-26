@@ -8,15 +8,17 @@ func _physics_process(delta: float) -> void:
 	if ScrGlobal.won:
 		if !ScrGlobal.cutscene:
 			ScrGlobal.cutscene = true
-			var time_left = ScrGlobal.level_time
-			$goal_sound.play()
+			await get_tree().create_timer(0.5).timeout
+			
 			while ScrGlobal.level_time > 0:
 				ScrGlobal.level_time -= 1
 				ScrGlobal.score += 1
-				$Score.text = "SCORE:"+str(ScrGlobal.score).pad_zeros(2)
-				await get_tree().create_timer(
-					clampf(remap(ScrGlobal.level_time, time_left, time_left / 3.0, 0.25, 0.05), 0.05, 0.25)
-				).timeout
+				$Score/units.frame = ScrGlobal.score % 10
+				$Score/tens.frame = int(ScrGlobal.score / 10.0)
+				$goal_sound.play()
+				$goal_sound.pitch_scale += 0.03
+				await get_tree().create_timer(0.1).timeout
+
 			await get_tree().create_timer(1.25).timeout
 			ScrGlobal.cutscene = false
 			ScrGlobal.keys_left = 0
@@ -38,7 +40,9 @@ func _physics_process(delta: float) -> void:
 		ScrGlobal.undo.emit()
 
 func _ready() -> void:
-	$Score.text = "SCORE:"+str(ScrGlobal.score).pad_zeros(2)
+	$Score/units.frame = ScrGlobal.score % 10
+	$Score/tens.frame = int(ScrGlobal.score / 10.0)
+	
 	$enter_level_popup.show()
 	if ScrGlobal.reset_level:
 		$reset_sound.play()
