@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://mnwk5mvy7ql3"]
 
 [ext_resource type="PackedScene" uid="uid://cbbm4rie743u" path="res://levels/level_preset.tscn" id="1_h4srm"]
-[ext_resource type="PackedScene" uid="uid://dmqjgg8vs5a1t" path="res://levels/lvl_1.tscn" id="2_1brky"]
+[ext_resource type="PackedScene" uid="uid://cs7uh7ao4tfkc" path="res://levels/lvl_10.tscn" id="2_1brky"]
 [ext_resource type="PackedScene" uid="uid://mnvnm5uxh645" path="res://objects/basic_wall.tscn" id="2_r43sy"]
 [ext_resource type="PackedScene" uid="uid://c1bb4eyxlkfdr" path="res://objects/number_wall.tscn" id="3_lje2i"]
 
@@ -20,26 +20,23 @@ position = Vector2(45, 72)
 [node name="goal" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="1" unique_id=1956486281]
 position = Vector2(99, 72)
 
-[node name="enter_level_popup" parent="." index="3" unique_id=1978777192]
-visible = false
-
-[node name="number_wall" parent="." index="5" unique_id=1628668538 instance=ExtResource("3_lje2i")]
+[node name="number_wall" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="2" unique_id=1628668538 instance=ExtResource("3_lje2i")]
 position = Vector2(90, 72)
 life_time = 6
 
-[node name="number_wall2" parent="." index="6" unique_id=907992229 instance=ExtResource("3_lje2i")]
+[node name="number_wall2" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="3" unique_id=907992229 instance=ExtResource("3_lje2i")]
 position = Vector2(99, 81)
 life_time = 6
 
-[node name="number_wall3" parent="." index="7" unique_id=1156177790 instance=ExtResource("3_lje2i")]
+[node name="number_wall3" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="4" unique_id=1156177790 instance=ExtResource("3_lje2i")]
 position = Vector2(99, 63)
 life_time = 6
 
-[node name="basic_wall" parent="." index="8" unique_id=704620247 instance=ExtResource("2_r43sy")]
+[node name="basic_wall" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="5" unique_id=704620247 instance=ExtResource("2_r43sy")]
 position = Vector2(108, 63)
 
-[node name="basic_wall2" parent="." index="9" unique_id=1248677148 instance=ExtResource("2_r43sy")]
+[node name="basic_wall2" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="6" unique_id=1248677148 instance=ExtResource("2_r43sy")]
 position = Vector2(108, 72)
 
-[node name="basic_wall3" parent="." index="10" unique_id=394478730 instance=ExtResource("2_r43sy")]
+[node name="basic_wall3" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="7" unique_id=394478730 instance=ExtResource("2_r43sy")]
 position = Vector2(108, 81)

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cs7uh7ao4tfkc"]
+
+[ext_resource type="PackedScene" uid="uid://cbbm4rie743u" path="res://levels/level_preset.tscn" id="1_og4tw"]
+[ext_resource type="PackedScene" uid="uid://bvco87ug0vdi4" path="res://levels/lvl_9.tscn" id="2_63h3x"]
+[ext_resource type="PackedScene" uid="uid://mnvnm5uxh645" path="res://objects/basic_wall.tscn" id="2_q5hoy"]
+
+[node name="lvl_10" unique_id=707018245 instance=ExtResource("1_og4tw")]
+next_level = ExtResource("2_63h3x")
+
+[node name="level_timer" parent="." index="1" unique_id=1695177744]
+level_time = 10
+
+[node name="player" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="0" unique_id=1674897621]
+position = Vector2(72, 45)
+
+[node name="goal" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="1" unique_id=1956486281]
+position = Vector2(72, 90)
+
+[node name="basic_wall" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="2" unique_id=521128621 instance=ExtResource("2_q5hoy")]
+position = Vector2(54, 90)
+
+[node name="basic_wall2" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="3" unique_id=1793063111 instance=ExtResource("2_q5hoy")]
+position = Vector2(54, 81)
+
+[node name="basic_wall3" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="4" unique_id=1379210005 instance=ExtResource("2_q5hoy")]
+position = Vector2(90, 90)
+
+[node name="basic_wall4" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="5" unique_id=614090994 instance=ExtResource("2_q5hoy")]
+position = Vector2(90, 81)
+
+[node name="basic_wall5" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="6" unique_id=1470466411 instance=ExtResource("2_q5hoy")]
+position = Vector2(72, 72)
+
+[node name="basic_wall6" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="7" unique_id=1331894461 instance=ExtResource("2_q5hoy")]
+position = Vector2(63, 72)
+
+[node name="basic_wall7" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="8" unique_id=266998541 instance=ExtResource("2_q5hoy")]
+position = Vector2(54, 72)
+
+[node name="basic_wall8" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="9" unique_id=1789390600 instance=ExtResource("2_q5hoy")]
+position = Vector2(81, 72)
+
+[node name="basic_wall9" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="10" unique_id=332475523 instance=ExtResource("2_q5hoy")]
+position = Vector2(90, 72)
+
+[node name="basic_wall10" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="11" unique_id=384216964 instance=ExtResource("2_q5hoy")]
+position = Vector2(54, 99)
+
+[node name="basic_wall11" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="12" unique_id=22369797 instance=ExtResource("2_q5hoy")]
+position = Vector2(90, 99)
