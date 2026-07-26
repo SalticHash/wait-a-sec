@@ -3,7 +3,69 @@
 [ext_resource type="Script" uid="uid://do7iol83pusyt" path="res://end_screen/end_screen.gd" id="1_hmshp"]
 [ext_resource type="Texture2D" uid="uid://nxcr3khpnqo6" path="res://textures/logo.png" id="2_fwhm7"]
 [ext_resource type="Texture2D" uid="uid://bksl30k7phl7n" path="res://textures/end_screen_label.png" id="3_fwhm7"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dpaoxvx2qb4hr" path="res://font/numbers.png" id="4_q7ipi"]
+=======
+[ext_resource type="Texture2D" uid="uid://dn7y6poniycfq" path="res://textures/logo_outline.png" id="3_mkgft"]
+[ext_resource type="Texture2D" uid="uid://dbbey2kwp3ktk" path="res://textures/textureChunk_2.png" id="4_hfn2g"]
+[ext_resource type="Texture2D" uid="uid://brleud3g32ogh" path="res://textures/menu_numbers.png" id="5_q7ipi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pkye5"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(43, 45, 27, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1odwr"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(0, 18, 27, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfn2g"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(72, 1, 3, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q7ipi"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(0, 54, 72, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5gnp"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(45, 9, 36, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpdng"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(45, 27, 36, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjggk"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(72, 45, 9, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1ayw"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(0, 63, 55, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64gd1"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(55, 63, 25, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcgll"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(57, 36, 21, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dggce"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(0, 72, 35, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4t2j"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(27, 18, 54, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o74m"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(18, 63, 37, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyxi3"]
+atlas = ExtResource("4_hfn2g")
+region = Rect2(37, 72, 41, 9)
+>>>>>>> Stashed changes
 
 [node name="EndScreen" type="Node2D" unique_id=1452646209]
 script = ExtResource("1_hmshp")
@@ -13,19 +75,111 @@ position = Vector2(18, 9)
 texture = ExtResource("2_fwhm7")
 centered = false
 
-[node name="Text" type="Sprite2D" parent="." unique_id=191484018]
+[node name="Text_OLD" type="Sprite2D" parent="." unique_id=191484018]
+visible = false
 position = Vector2(28, 55)
 texture = ExtResource("3_fwhm7")
 centered = false
+metadata/_edit_lock_ = true
+
+[node name="Text" type="Sprite2D" parent="." unique_id=356563939]
+position = Vector2(26, 55)
+texture = SubResource("AtlasTexture_pkye5")
+centered = false
+
+[node name="Score" type="Sprite2D" parent="Text" unique_id=973474693]
+position = Vector2(24, 0)
+texture = SubResource("AtlasTexture_1odwr")
+centered = false
+
+[node name="!" type="Sprite2D" parent="Text" unique_id=1056418382]
+position = Vector2(57, 1)
+texture = SubResource("AtlasTexture_hfn2g")
+centered = false
+
+[node name="THX" type="Sprite2D" parent="Text" unique_id=609024577]
+position = Vector2(2, 13)
+texture = SubResource("AtlasTexture_q7ipi")
+centered = false
+
+[node name="Andres" type="Sprite2D" parent="Text" unique_id=686061761]
+position = Vector2(0, 27)
+texture = SubResource("AtlasTexture_i5gnp")
+centered = false
+
+[node name="Carmiol" type="Sprite2D" parent="Text/Andres" unique_id=1006000076]
+position = Vector2(33, 0)
+texture = SubResource("AtlasTexture_kpdng")
+centered = false
+
+[node name="Punto" type="Sprite2D" parent="Text/Andres" unique_id=1906821556]
+position = Vector2(3, 8)
+texture = SubResource("AtlasTexture_fjggk")
+centered = false
+
+[node name="Punto2" type="Sprite2D" parent="Text/Andres" unique_id=947509724]
+position = Vector2(3, 16)
+texture = SubResource("AtlasTexture_fjggk")
+centered = false
+
+[node name="Punto3" type="Sprite2D" parent="Text/Andres" unique_id=771710490]
+position = Vector2(3, 24)
+texture = SubResource("AtlasTexture_fjggk")
+centered = false
+
+[node name="Lead" type="Sprite2D" parent="Text/Andres" unique_id=2050678678]
+position = Vector2(12, 8)
+texture = SubResource("AtlasTexture_p1ayw")
+centered = false
+
+[node name="Artist" type="Sprite2D" parent="Text/Andres" unique_id=797087020]
+position = Vector2(13, 16)
+texture = SubResource("AtlasTexture_64gd1")
+centered = false
+
+[node name="Level" type="Sprite2D" parent="Text/Andres" unique_id=1630200368]
+position = Vector2(13, 24)
+texture = SubResource("AtlasTexture_xcgll")
+centered = false
+
+[node name="Designer" type="Sprite2D" parent="Text/Andres" unique_id=1220433364]
+position = Vector2(34, 24)
+texture = SubResource("AtlasTexture_dggce")
+centered = false
+
+[node name="Saltic" type="Sprite2D" parent="Text" unique_id=700459749]
+position = Vector2(2, 64)
+texture = SubResource("AtlasTexture_g4t2j")
+centered = false
+
+[node name="Punto4" type="Sprite2D" parent="Text/Saltic" unique_id=1897117055]
+position = Vector2(1, 8)
+texture = SubResource("AtlasTexture_fjggk")
+centered = false
+
+[node name="Punto5" type="Sprite2D" parent="Text/Saltic" unique_id=2118282250]
+position = Vector2(1, 16)
+texture = SubResource("AtlasTexture_fjggk")
+centered = false
+
+[node name="Programer" type="Sprite2D" parent="Text/Saltic" unique_id=2105921495]
+position = Vector2(11, 8)
+texture = SubResource("AtlasTexture_7o74m")
+centered = false
+
+[node name="Publishing" type="Sprite2D" parent="Text/Saltic" unique_id=1406056850]
+position = Vector2(11, 16)
+texture = SubResource("AtlasTexture_nyxi3")
+centered = false
 
 [node name="tens" type="Sprite2D" parent="." unique_id=1315696044]
-position = Vector2(94, 57)
-texture = ExtResource("4_q7ipi")
+position = Vector2(76, 57)
+texture = ExtResource("5_q7ipi")
 centered = false
 hframes = 10
 
 [node name="units" type="Sprite2D" parent="." unique_id=502705467]
-position = Vector2(99, 57)
-texture = ExtResource("4_q7ipi")
+position = Vector2(80, 57)
+texture = ExtResource("5_q7ipi")
 centered = false
 hframes = 10
