@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://c562as5dp58fk"]
 
 [ext_resource type="Script" uid="uid://do7iol83pusyt" path="res://end_screen/end_screen.gd" id="1_hmshp"]
+[ext_resource type="Texture2D" uid="uid://nxcr3khpnqo6" path="res://textures/logo.png" id="2_fwhm7"]
 [ext_resource type="Texture2D" uid="uid://bksl30k7phl7n" path="res://textures/end_screen_label.png" id="3_fwhm7"]
-[ext_resource type="Texture2D" uid="uid://dn7y6poniycfq" path="res://textures/logo_outline.png" id="3_mkgft"]
 [ext_resource type="Texture2D" uid="uid://dpaoxvx2qb4hr" path="res://font/numbers.png" id="4_q7ipi"]
 
 [node name="EndScreen" type="Node2D" unique_id=1452646209]
@@ -10,7 +10,7 @@ script = ExtResource("1_hmshp")
 
 [node name="Logo" type="Sprite2D" parent="." unique_id=1454146235]
 position = Vector2(18, 9)
-texture = ExtResource("3_mkgft")
+texture = ExtResource("2_fwhm7")
 centered = false
 
 [node name="Text" type="Sprite2D" parent="." unique_id=191484018]
