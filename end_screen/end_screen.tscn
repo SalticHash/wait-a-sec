@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dn7y6poniycfq" path="res://textures/logo_outline.png" id="3_mkgft"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jh3y0"]
+line_spacing = -1.0
 font = ExtResource("1_72q5w")
 font_size = 5
 
