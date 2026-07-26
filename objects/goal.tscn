@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cnai42qg7u723"]
 
 [ext_resource type="PackedScene" uid="uid://ddqanxrilt141" path="res://objects/BoardElement2D.tscn" id="1_i726j"]
+[ext_resource type="Script" uid="uid://cpo5qtdfytuhe" path="res://scripts/goal.gd" id="2_c3dbx"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3dbx"]
 load_path = "res://.godot/imported/textureChunk_1.png-e0720ace01e34a084536a9e8a7ee8f23.ctex"
@@ -11,6 +12,8 @@ region = Rect2(27, 0, 9, 9)
 filter_clip = true
 
 [node name="goal" unique_id=1956486281 instance=ExtResource("1_i726j")]
+script = ExtResource("2_c3dbx")
+use_key = false
 life_time = 0
 trail_anim = "goal"
 

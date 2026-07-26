@@ -9,6 +9,7 @@ func _physics_process(delta: float) -> void:
 		if !ScrGlobal.cutscene:
 			ScrGlobal.cutscene = true
 			var time_left = ScrGlobal.level_time
+			$key_sound.play()
 			while ScrGlobal.level_time > 0:
 				ScrGlobal.level_time -= 1
 				ScrGlobal.score += 1
@@ -35,6 +36,7 @@ func _physics_process(delta: float) -> void:
 		ScrGlobal.undo.emit()
 
 func _ready() -> void:
+	ScrGlobal.got_key.connect(func(): $key_sound.play())
 	$Score.text = "SCORE:"+str(ScrGlobal.score).pad_zeros(2)
 	$enter_level_popup.show()
 	if ScrGlobal.reset_level:

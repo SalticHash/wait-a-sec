@@ -2,9 +2,15 @@ extends Node
 
 const TRAIL_SCENE: PackedScene = preload("res://objects/trail_effect.tscn")
 
-@warning_ignore("unused_signal")
+@warning_ignore_start("unused_signal")
 signal undo
+signal got_key
 
+var has_key: bool = false :
+	set(value):
+		if value == has_key: return
+		has_key = value
+		if has_key: got_key.emit()
 var reset_level: bool = false
 var level_time: int = 99
 var heard_meme: bool = false

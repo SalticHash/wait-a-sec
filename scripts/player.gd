@@ -3,7 +3,10 @@ extends BoardElement2D
 
 @onready var last_position: Array[Vector2] = [position]
 var last_rotation: Array[float] = [0.0]
+var had_key: Array[bool] = [false]
 var stuck: bool = false
+
+
 func _ready() -> void:
 	ScrGlobal.undo.connect(_return)
 
@@ -39,19 +42,24 @@ func _movement() -> void:
 	if Input.is_action_just_pressed("key_right"): dir = Vector2(distance, 0)
 	if Input.is_action_just_pressed("key_left"): dir = Vector2(-distance, 0)
 	
-	if $inside.has_overlapping_areas() and !stuck:
-		_disappear()
-		$inside.monitoring = false
-		stuck = true
 
 	
 	if dir:
 		if can_move(dir):
 			last_rotation.push_back($sprite.rotation)
 			last_position.push_back(position)
+			had_key.push_back(ScrGlobal.has_key)
 			_efective_move()
 			$sprite.rotation = dir.angle()
 			position += dir
+			await get_tree().physics_frame
+			if $inside.has_overlapping_areas() and !stuck:
+				_disappear()
+				$inside.monitoring = false
+				stuck = true
+	
+			if $key_get.has_overlapping_areas():
+				ScrGlobal.has_key = true
 		else:
 			$sprite/AnimationPlayer.play("RESET")
 			$sprite/AnimationPlayer.advance(0)
@@ -70,24 +78,13 @@ func _return() -> void:
 	if stuck:
 		$inside.monitoring = true
 		stuck = false
+	ScrGlobal.has_key = had_key.pop_back()
 	position = last_position.pop_back()
 	$sprite.rotation = last_rotation.pop_back()
 
 func _efective_move() -> void:
 	_create_trail()
 	ScrGlobal.level_time -= 1
-
-
-func _spr_dir_down() -> void:
-	$sprite.rotation = deg_to_rad(90.0)
-	$sprite.offset.y = -9
-	$sprite.flip_h = false
-
-
-func _spr_dir_reset() -> void:
-	$sprite.rotation = 0
-	$sprite.offset.y = 0
-	$sprite.flip_h = false
 
 
 func _on_touch_goal(_area: Area2D) -> void:

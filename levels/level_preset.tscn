@@ -5,12 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://d1rfie6qhpdlc" path="res://objects/level_timer.tscn" id="2_vynm1"]
 [ext_resource type="PackedScene" uid="uid://b572syq1rj7s5" path="res://objects/player.tscn" id="3_62vhw"]
 [ext_resource type="PackedScene" uid="uid://cnai42qg7u723" path="res://objects/goal.tscn" id="4_vynm1"]
-[ext_resource type="Texture2D" uid="uid://bnevv2qxbhuia" path="res://textures/level_timer.png" id="6_lm05e"]
-[ext_resource type="Texture2D" uid="uid://cwckp0nv8mitr" path="res://textures/numberDisplay_big.png" id="7_pkye5"]
+[ext_resource type="Texture2D" uid="uid://mh0la3vex32a" path="res://textures/numberDisplay_big_light.png" id="6_p15h7"]
 [ext_resource type="Texture2D" uid="uid://cow8gbbremft" path="res://textures/tutorial_text.png" id="8_p15h7"]
 [ext_resource type="Texture2D" uid="uid://sfqjbgj3pfh4" path="res://textures/level_text.png" id="9_uydtg"]
 [ext_resource type="AudioStream" uid="uid://bxu21s0qnpep" path="res://audio/snd_reset.ogg" id="10_pkye5"]
 [ext_resource type="FontFile" uid="uid://cjy05tv16y7pe" path="res://font/font.png" id="11_p15h7"]
+[ext_resource type="AudioStream" uid="uid://thwb20kt303c" path="res://audio/clink.wav" id="12_uydtg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jh3y0"]
 font = ExtResource("11_p15h7")
@@ -30,7 +30,6 @@ metadata/_edit_lock_ = true
 
 [node name="goal" parent="level_objects" unique_id=1956486281 instance=ExtResource("4_vynm1")]
 position = Vector2(99, 45)
-trail_anim = "goal"
 
 [node name="player" parent="level_objects" unique_id=1674897621 instance=ExtResource("3_62vhw")]
 position = Vector2(45, 99)
@@ -43,40 +42,35 @@ offset_right = 153.0
 offset_bottom = 153.0
 color = Color(0, 0, 0, 1)
 
-[node name="bg" type="Sprite2D" parent="enter_level_popup" unique_id=612338061]
-position = Vector2(63, 72)
-texture = ExtResource("6_lm05e")
-centered = false
-
 [node name="units" type="Sprite2D" parent="enter_level_popup" unique_id=1973338694]
-position = Vector2(78, 75)
-texture = ExtResource("7_pkye5")
+position = Vector2(78, 64)
+texture = ExtResource("6_p15h7")
 centered = false
 hframes = 10
 
 [node name="tens" type="Sprite2D" parent="enter_level_popup" unique_id=2082766428]
-position = Vector2(66, 75)
-texture = ExtResource("7_pkye5")
+position = Vector2(66, 64)
+texture = ExtResource("6_p15h7")
 centered = false
 hframes = 10
 
 [node name="TutorialText" type="Sprite2D" parent="enter_level_popup" unique_id=573539929]
 visible = false
-position = Vector2(41, 54)
+position = Vector2(41, 43)
 texture = ExtResource("8_p15h7")
 centered = false
 
 [node name="LevelText" type="Sprite2D" parent="enter_level_popup" unique_id=1063507228]
 visible = false
-position = Vector2(54, 54)
+position = Vector2(56, 43)
 texture = ExtResource("9_uydtg")
 centered = false
 
 [node name="ContinueTip" type="Label" parent="enter_level_popup" unique_id=52415057]
 offset_left = 21.0
-offset_top = 115.0
+offset_top = 104.0
 offset_right = 136.0
-offset_bottom = 120.0
+offset_bottom = 109.0
 text = "PRESS SPACE TO CONTINUE"
 label_settings = SubResource("LabelSettings_jh3y0")
 horizontal_alignment = 1
@@ -105,3 +99,6 @@ text = "SCORE:0"
 label_settings = SubResource("LabelSettings_jh3y0")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="key_sound" type="AudioStreamPlayer" parent="." unique_id=601905936]
+stream = ExtResource("12_uydtg")
