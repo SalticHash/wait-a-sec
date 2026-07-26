@@ -31,6 +31,10 @@ region = Rect2(0, 9, 45, 9)
 atlas = ExtResource("11_mub64")
 region = Rect2(0, 36, 54, 9)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tl50"]
+atlas = ExtResource("11_mub64")
+region = Rect2(42, 38, 3, 5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0uvjf"]
 atlas = ExtResource("11_mub64")
 region = Rect2(0, 18, 27, 9)
@@ -101,6 +105,11 @@ stream = ExtResource("10_pkye5")
 [node name="UndoTip" type="Sprite2D" parent="." unique_id=1150083987]
 position = Vector2(0, 144)
 texture = SubResource("AtlasTexture_s35nk")
+centered = false
+
+[node name="T" type="Sprite2D" parent="UndoTip" unique_id=9904423]
+position = Vector2(54, 2)
+texture = SubResource("AtlasTexture_6tl50")
 centered = false
 
 [node name="Score" type="Sprite2D" parent="." unique_id=218367654]
