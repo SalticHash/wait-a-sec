@@ -11,6 +11,8 @@ func _physics_process(delta: float) -> void:
 			var time_left = ScrGlobal.level_time
 			while ScrGlobal.level_time > 0:
 				ScrGlobal.level_time -= 1
+				ScrGlobal.score += 1
+				$Score.text = "SCORE:"+str(ScrGlobal.score).pad_zeros(2)
 				await get_tree().create_timer(
 					clampf(remap(ScrGlobal.level_time, time_left, time_left / 3.0, 0.25, 0.05), 0.05, 0.25)
 				).timeout
@@ -24,6 +26,7 @@ func _physics_process(delta: float) -> void:
 			ScrGlobal.cutscene = false
 			$enter_level_popup.hide()
 		return
+	$UndoTip.visible = ScrGlobal.level_time == 0 or $level_objects/player.stuck
 	if Input.is_action_just_pressed("key_reset"):
 		ScrGlobal._reload_level()
 		ScrGlobal.reset_level = true
@@ -32,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		ScrGlobal.undo.emit()
 
 func _ready() -> void:
+	$Score.text = "SCORE:"+str(ScrGlobal.score).pad_zeros(2)
 	$enter_level_popup.show()
 	if ScrGlobal.reset_level:
 		$reset_sound.play()

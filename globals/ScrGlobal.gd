@@ -12,6 +12,7 @@ var original_level_time: int = 99
 var won: bool = false
 var current_level = preload("res://levels/lvl_tutorial.tscn")
 var cutscene: bool = false
+var score: int = 0
 
 func _reload_level() -> void:
 	get_tree().change_scene_to_packed(current_level)

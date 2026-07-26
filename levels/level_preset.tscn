@@ -36,7 +36,6 @@ trail_anim = "goal"
 position = Vector2(45, 99)
 
 [node name="enter_level_popup" type="Node2D" parent="." unique_id=1978777192]
-visible = false
 z_index = 1
 
 [node name="Cover" type="ColorRect" parent="enter_level_popup" unique_id=1411949169]
@@ -73,16 +72,36 @@ position = Vector2(54, 54)
 texture = ExtResource("9_uydtg")
 centered = false
 
+[node name="ContinueTip" type="Label" parent="enter_level_popup" unique_id=52415057]
+offset_left = 21.0
+offset_top = 115.0
+offset_right = 136.0
+offset_bottom = 120.0
+text = "PRESS SPACE TO CONTINUE"
+label_settings = SubResource("LabelSettings_jh3y0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=455021973]
 stream = ExtResource("10_pkye5")
 
 [node name="UndoTip" type="Label" parent="." unique_id=1218878645]
-visible = false
 offset_left = 40.0
 offset_top = 133.0
 offset_right = 115.0
 offset_bottom = 138.0
 text = "UNDO OR RESTART"
+label_settings = SubResource("LabelSettings_jh3y0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score" type="Label" parent="." unique_id=705968426]
+z_index = 1
+offset_left = 40.0
+offset_top = 142.0
+offset_right = 115.0
+offset_bottom = 147.0
+text = "SCORE:0"
 label_settings = SubResource("LabelSettings_jh3y0")
 horizontal_alignment = 1
 vertical_alignment = 1
