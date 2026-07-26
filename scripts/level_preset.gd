@@ -32,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("key_reset"):
 		ScrGlobal._reload_level()
 		ScrGlobal.reset_level = true
+		ScrGlobal.keys_left = 0
 	if Input.is_action_just_pressed("key_undo") and ScrGlobal.level_time < ScrGlobal.original_level_time:
 		ScrGlobal.level_time += 1
 		ScrGlobal.undo.emit()
