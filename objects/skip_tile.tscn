@@ -1,12 +1,22 @@
 [gd_scene format=3 uid="uid://cxim01fpbtsa6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jh3y0"]
-size = Vector2(7, 7)
+[ext_resource type="PackedScene" uid="uid://ddqanxrilt141" path="res://objects/BoardElement2D.tscn" id="1_fl24d"]
 
-[node name="skip_tile" type="Area2D" unique_id=1623724824]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jo4so"]
+load_path = "res://.godot/imported/textureChunk_1.png-e0720ace01e34a084536a9e8a7ee8f23.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vldj6"]
+atlas = SubResource("CompressedTexture2D_jo4so")
+region = Rect2(45, 0, 9, 9)
+filter_clip = true
+
+[node name="skip_tile" unique_id=1956486281 instance=ExtResource("1_fl24d")]
+life_time = 1
+trail_anim = "wall"
+
+[node name="area" parent="." index="0" unique_id=118502564]
 collision_layer = 8
 collision_mask = 8
 
-[node name="collision" type="CollisionShape2D" parent="." unique_id=1177253201]
-position = Vector2(4.5, 4.5)
-shape = SubResource("RectangleShape2D_jh3y0")
+[node name="sprite" parent="." index="1" unique_id=467322566]
+texture = SubResource("AtlasTexture_vldj6")
