@@ -101,5 +101,5 @@ label_settings = SubResource("LabelSettings_jh3y0")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="key_sound" type="AudioStreamPlayer" parent="." unique_id=601905936]
+[node name="goal_sound" type="AudioStreamPlayer" parent="." unique_id=601905936]
 stream = ExtResource("12_uydtg")

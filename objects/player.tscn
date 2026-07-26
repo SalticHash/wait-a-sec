@@ -59,22 +59,22 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykyjo"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f46kd"]
-size = Vector2(0, 0)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxov2"]
-size = Vector2(0, 0)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rerk"]
 size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmc1l"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i825w"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
 size = Vector2(0, 0)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ostoq"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f46kd"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3rerk"]
+size = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i825w"]
 size = Vector2(0, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3rfka"]
@@ -102,7 +102,7 @@ libraries/ = SubResource("AnimationLibrary_3rerk")
 
 [node name="inside" type="Area2D" parent="." index="3" unique_id=1852214553]
 position = Vector2(4, 4)
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 metadata/_edit_lock_ = true
 
@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_ykyjo")
 
 [node name="key_get" type="Area2D" parent="." index="4" unique_id=2007139329]
 position = Vector2(4, 4)
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 metadata/_edit_lock_ = true
 
@@ -120,80 +120,116 @@ shape = SubResource("RectangleShape2D_ykyjo")
 
 [node name="up" type="Area2D" parent="." index="5" unique_id=2030416467]
 position = Vector2(4, -5)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 10
 metadata/_edit_lock_ = true
 
 [node name="collision" type="CollisionShape2D" parent="up" index="0" unique_id=1430853635]
 shape = SubResource("RectangleShape2D_ykyjo")
 
-[node name="up_far" type="Area2D" parent="." index="6" unique_id=1119601334]
-position = Vector2(4, -14)
-collision_layer = 2
-collision_mask = 2
-metadata/_edit_lock_ = true
-
-[node name="collision" type="CollisionShape2D" parent="up_far" index="0" unique_id=204221312]
-shape = SubResource("RectangleShape2D_f46kd")
-
-[node name="down" type="Area2D" parent="." index="7" unique_id=489652897]
+[node name="down" type="Area2D" parent="." index="6" unique_id=489652897]
 position = Vector2(4, 13)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 10
 metadata/_edit_lock_ = true
 
 [node name="collision" type="CollisionShape2D" parent="down" index="0" unique_id=1649960263]
 shape = SubResource("RectangleShape2D_uxov2")
 
-[node name="down_far" type="Area2D" parent="." index="8" unique_id=536696142]
-position = Vector2(4, 22)
-collision_layer = 2
-collision_mask = 2
-metadata/_edit_lock_ = true
-
-[node name="collision" type="CollisionShape2D" parent="down_far" index="0" unique_id=46773557]
-shape = SubResource("RectangleShape2D_3rerk")
-
-[node name="left" type="Area2D" parent="." index="9" unique_id=269932568]
+[node name="left" type="Area2D" parent="." index="7" unique_id=269932568]
 position = Vector2(-5, 4)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 10
 metadata/_edit_lock_ = true
 
 [node name="collision" type="CollisionShape2D" parent="left" index="0" unique_id=1178604547]
 shape = SubResource("RectangleShape2D_nmc1l")
 
-[node name="left_far" type="Area2D" parent="." index="10" unique_id=427651681]
-position = Vector2(-14, 4)
-collision_layer = 2
-collision_mask = 2
-metadata/_edit_lock_ = true
-
-[node name="collision" type="CollisionShape2D" parent="left_far" index="0" unique_id=2098491676]
-shape = SubResource("RectangleShape2D_i825w")
-
-[node name="right" type="Area2D" parent="." index="11" unique_id=1537119374]
+[node name="right" type="Area2D" parent="." index="8" unique_id=1537119374]
 position = Vector2(13, 4)
-collision_layer = 2
-collision_mask = 2
+collision_layer = 0
+collision_mask = 10
 metadata/_edit_lock_ = true
 
 [node name="collision" type="CollisionShape2D" parent="right" index="0" unique_id=1643805086]
 shape = SubResource("RectangleShape2D_ostoq")
 
-[node name="right_far" type="Area2D" parent="." index="12" unique_id=404664520]
-position = Vector2(22, 4)
-collision_layer = 2
+[node name="up_skip" type="Area2D" parent="." index="9" unique_id=1577040569]
+position = Vector2(4, -5)
+collision_layer = 0
 collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="up_skip" index="0" unique_id=134370961]
+shape = SubResource("RectangleShape2D_ykyjo")
+
+[node name="down_skip" type="Area2D" parent="." index="10" unique_id=724944407]
+position = Vector2(4, 13)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="down_skip" index="0" unique_id=22893696]
+shape = SubResource("RectangleShape2D_uxov2")
+
+[node name="left_skip" type="Area2D" parent="." index="11" unique_id=1377230571]
+position = Vector2(-5, 4)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="left_skip" index="0" unique_id=839167736]
+shape = SubResource("RectangleShape2D_nmc1l")
+
+[node name="right_skip" type="Area2D" parent="." index="12" unique_id=888793156]
+position = Vector2(13, 4)
+collision_layer = 0
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="right_skip" index="0" unique_id=1137558487]
+shape = SubResource("RectangleShape2D_ostoq")
+
+[node name="up_far" type="Area2D" parent="." index="13" unique_id=1119601334]
+position = Vector2(4, -14)
+collision_layer = 0
+collision_mask = 10
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="up_far" index="0" unique_id=204221312]
+shape = SubResource("RectangleShape2D_f46kd")
+
+[node name="down_far" type="Area2D" parent="." index="14" unique_id=536696142]
+position = Vector2(4, 22)
+collision_layer = 0
+collision_mask = 10
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="down_far" index="0" unique_id=46773557]
+shape = SubResource("RectangleShape2D_3rerk")
+
+[node name="left_far" type="Area2D" parent="." index="15" unique_id=427651681]
+position = Vector2(-14, 4)
+collision_layer = 0
+collision_mask = 10
+metadata/_edit_lock_ = true
+
+[node name="collision" type="CollisionShape2D" parent="left_far" index="0" unique_id=2098491676]
+shape = SubResource("RectangleShape2D_i825w")
+
+[node name="right_far" type="Area2D" parent="." index="16" unique_id=404664520]
+position = Vector2(22, 4)
+collision_layer = 0
+collision_mask = 10
 metadata/_edit_lock_ = true
 
 [node name="collision" type="CollisionShape2D" parent="right_far" index="0" unique_id=1838017470]
 shape = SubResource("RectangleShape2D_3rfka")
 
-[node name="fail_sound_meme" type="AudioStreamPlayer" parent="." index="13" unique_id=923107698]
+[node name="fail_sound_meme" type="AudioStreamPlayer" parent="." index="17" unique_id=923107698]
 stream = ExtResource("3_uxov2")
 
-[node name="fail_sound" type="AudioStreamPlayer" parent="." index="14" unique_id=907279109]
+[node name="fail_sound" type="AudioStreamPlayer" parent="." index="18" unique_id=907279109]
 stream = ExtResource("4_nmc1l")
 
 [connection signal="area_entered" from="area" to="." method="_on_touch_goal"]

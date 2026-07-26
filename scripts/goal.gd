@@ -7,7 +7,7 @@ func _physics_process(_delta: float) -> void:
 		_disappear()
 		return
 	if use_key:
-		if ScrGlobal.has_key: _appear()
+		if ScrGlobal.keys_left == 0: _appear()
 		else: _disappear()
 	else:
 		_appear()

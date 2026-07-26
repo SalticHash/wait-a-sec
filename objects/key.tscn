@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddqanxrilt141" path="res://objects/BoardElement2D.tscn" id="1_xlllq"]
 [ext_resource type="Script" uid="uid://ch386bjuiw46m" path="res://scripts/key.gd" id="2_ex2ll"]
+[ext_resource type="AudioStream" uid="uid://thwb20kt303c" path="res://audio/clink.wav" id="3_yk20f"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jo4so"]
 load_path = "res://.godot/imported/textureChunk_1.png-e0720ace01e34a084536a9e8a7ee8f23.ctex"
@@ -17,8 +18,13 @@ life_time = 1
 trail_anim = "wall_cyan"
 
 [node name="area" parent="." index="0" unique_id=118502564]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 0
+collision_mask = 1
 
 [node name="sprite" parent="." index="1" unique_id=467322566]
 texture = SubResource("AtlasTexture_yk20f")
+
+[node name="key_sound" type="AudioStreamPlayer" parent="." index="2" unique_id=1943592793]
+stream = ExtResource("3_yk20f")
+
+[connection signal="area_entered" from="area" to="." method="_player_entered"]

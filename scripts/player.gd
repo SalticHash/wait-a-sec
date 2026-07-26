@@ -3,7 +3,6 @@ extends BoardElement2D
 
 @onready var last_position: Array[Vector2] = [position]
 var last_rotation: Array[float] = [0.0]
-var had_key: Array[bool] = [false]
 var stuck: bool = false
 
 
@@ -25,10 +24,10 @@ func can_move(dir: Vector2) -> bool:
 		Vector2(9, 0): return !$right.has_overlapping_areas()
 		Vector2(-9, 0): return !$left.has_overlapping_areas()
 		
-		Vector2(0, 18): return !$down_far.has_overlapping_areas() and can_move(dir / 2)
-		Vector2(0, -18): return !$up_far.has_overlapping_areas() and can_move(dir / 2)
-		Vector2(18, 0): return !$right_far.has_overlapping_areas() and can_move(dir / 2)
-		Vector2(-18, 0): return !$left_far.has_overlapping_areas() and can_move(dir / 2)
+		Vector2(0, 18): return !$down_far.has_overlapping_areas() and !$down_skip.has_overlapping_areas()
+		Vector2(0, -18): return !$up_far.has_overlapping_areas() and !$up_skip.has_overlapping_areas()
+		Vector2(18, 0): return !$right_far.has_overlapping_areas() and !$right_skip.has_overlapping_areas()
+		Vector2(-18, 0): return !$left_far.has_overlapping_areas() and !$left_skip.has_overlapping_areas()
 	return false
 
 func _movement() -> void:
@@ -48,7 +47,6 @@ func _movement() -> void:
 		if can_move(dir):
 			last_rotation.push_back($sprite.rotation)
 			last_position.push_back(position)
-			had_key.push_back(ScrGlobal.has_key)
 			_efective_move()
 			$sprite.rotation = dir.angle()
 			position += dir
@@ -57,9 +55,6 @@ func _movement() -> void:
 				_disappear()
 				$inside.monitoring = false
 				stuck = true
-	
-			if $key_get.has_overlapping_areas():
-				ScrGlobal.has_key = true
 		else:
 			$sprite/AnimationPlayer.play("RESET")
 			$sprite/AnimationPlayer.advance(0)
@@ -78,13 +73,13 @@ func _return() -> void:
 	if stuck:
 		$inside.monitoring = true
 		stuck = false
-	ScrGlobal.has_key = had_key.pop_back()
 	position = last_position.pop_back()
 	$sprite.rotation = last_rotation.pop_back()
 
 func _efective_move() -> void:
 	_create_trail()
 	ScrGlobal.level_time -= 1
+	
 
 
 func _on_touch_goal(_area: Area2D) -> void:

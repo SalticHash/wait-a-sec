@@ -4,15 +4,18 @@ const TRAIL_SCENE: PackedScene = preload("res://objects/trail_effect.tscn")
 
 @warning_ignore_start("unused_signal")
 signal undo
-signal got_key
+signal time_changed(last_time, new_time)
 
-var has_key: bool = false :
-	set(value):
-		if value == has_key: return
-		has_key = value
-		if has_key: got_key.emit()
+
+
+var keys_left: int = 0
 var reset_level: bool = false
-var level_time: int = 99
+var level_time: int = 99 :
+	set(value):
+		if level_time == value: return
+		time_changed.emit(level_time, value)
+		level_time = value
+
 var heard_meme: bool = false
 var original_level_time: int = 99
 var won: bool = false
