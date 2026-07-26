@@ -1,34 +1,63 @@
 extends BoardElement2D
 
+
+@onready var last_position: Array[Vector2] = [position]
+var last_rotation: Array[float] = [0.0]
+
+func _ready() -> void:
+	ScrGlobal.undo.connect(_return)
 func _physics_process(_delta: float) -> void:
 	super(_delta)
-	if visible and !ScrGlobal.cutscene:
+	if visible and !ScrGlobal.cutscene and !ScrGlobal.won:
 		_movement()
 
+
+func can_move(dir: Vector2) -> bool:
+	match dir:
+		Vector2(0, 9): return !$down.has_overlapping_areas()
+		Vector2(0, -9): return !$up.has_overlapping_areas()
+		Vector2(9, 0): return !$right.has_overlapping_areas()
+		Vector2(-9, 0): return !$left.has_overlapping_areas()
+		
+		Vector2(0, 18): return !$down_far.has_overlapping_areas() and can_move(dir / 2)
+		Vector2(0, -18): return !$up_far.has_overlapping_areas() and can_move(dir / 2)
+		Vector2(18, 0): return !$right_far.has_overlapping_areas() and can_move(dir / 2)
+		Vector2(-18, 0): return !$left_far.has_overlapping_areas() and can_move(dir / 2)
+	return false
 
 func _movement() -> void:
 	var distance: int = 9
 	if Input.is_action_pressed("key_shift"):
 		distance = 18
-	if Input.is_action_just_pressed("key_up") and (!$up.has_overlapping_areas() if distance == 9 else !$up_far.has_overlapping_areas() and !$up.has_overlapping_areas()):
-		_efective_move()
-		position.y -= distance
-		_spr_dir_down()
-		$sprite.flip_h = true
-	if Input.is_action_just_pressed("key_down") and (!$down.has_overlapping_areas() if distance == 9 else !$down_far.has_overlapping_areas() and !$down.has_overlapping_areas()):
-		_efective_move()
-		position.y += distance
-		_spr_dir_down()
-	if Input.is_action_just_pressed("key_left") and (!$left.has_overlapping_areas() if distance == 9 else !$left_far.has_overlapping_areas() and !$left.has_overlapping_areas()):
-		_efective_move()
-		position.x -= distance
-		_spr_dir_reset()
-		$sprite.flip_h = true
-	if Input.is_action_just_pressed("key_right") and (!$right.has_overlapping_areas() if distance == 9 else !$right_far.has_overlapping_areas() and !$right.has_overlapping_areas()):
-		_efective_move()
-		position.x += distance
-		_spr_dir_reset()
+	
+	var dir: Vector2 = Vector2.ZERO
+	if Input.is_action_just_pressed("key_up"): dir = Vector2(0, -distance)
+	if Input.is_action_just_pressed("key_down"): dir = Vector2(0, distance)
+	if Input.is_action_just_pressed("key_right"): dir = Vector2(distance, 0)
+	if Input.is_action_just_pressed("key_left"): dir = Vector2(-distance, 0)
+	
+	if dir:
+		if can_move(dir):
+			last_rotation.push_back($sprite.rotation)
+			last_position.push_back(position)
+			_efective_move()
+			$sprite.rotation = dir.angle()
+			position += dir
+		else:
+			$sprite/AnimationPlayer.play("RESET")
+			$sprite/AnimationPlayer.advance(0)
+			$sprite/AnimationPlayer.play("shake")
+			$sprite/AnimationPlayer.advance(0)
+			if randf() >= 0.995 and !ScrGlobal.heard_meme:
+				$fail_sound_meme.play()
+				ScrGlobal.heard_meme = true
+			else:
+				$fail_sound.play()
 
+
+func _return() -> void:
+	position = last_position.pop_back()
+	$sprite.rotation = last_rotation.pop_back()
 
 func _efective_move() -> void:
 	_create_trail()

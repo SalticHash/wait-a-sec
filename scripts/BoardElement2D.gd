@@ -12,6 +12,8 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	if ScrGlobal.level_time == life_time:
 		_disappear()
+	if ScrGlobal.level_time > life_time:
+		_appear()
 
 
 func _disappear() -> void:

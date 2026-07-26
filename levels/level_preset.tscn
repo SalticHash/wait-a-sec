@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cwckp0nv8mitr" path="res://textures/numberDisplay_big.png" id="7_pkye5"]
 [ext_resource type="Texture2D" uid="uid://cow8gbbremft" path="res://textures/tutorial_text.png" id="8_p15h7"]
 [ext_resource type="Texture2D" uid="uid://sfqjbgj3pfh4" path="res://textures/level_text.png" id="9_uydtg"]
+[ext_resource type="AudioStream" uid="uid://bxu21s0qnpep" path="res://audio/snd_reset.ogg" id="10_pkye5"]
 
 [node name="level_preset" type="Node2D" unique_id=707018245]
 script = ExtResource("1_62vhw")
@@ -64,3 +65,6 @@ visible = false
 position = Vector2(54, 54)
 texture = ExtResource("9_uydtg")
 centered = false
+
+[node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=455021973]
+stream = ExtResource("10_pkye5")

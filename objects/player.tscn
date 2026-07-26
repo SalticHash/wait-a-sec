@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ddqanxrilt141" path="res://objects/BoardElement2D.tscn" id="1_eqqp1"]
 [ext_resource type="Script" uid="uid://b4t148aucb60d" path="res://scripts/player.gd" id="2_ykyjo"]
+[ext_resource type="AudioStream" uid="uid://v58c7knykiue" path="res://audio/fail_move_meme.mp3" id="3_uxov2"]
+[ext_resource type="AudioStream" uid="uid://ie6ck0fkau5d" path="res://audio/snd_failed_move.ogg" id="4_nmc1l"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ykyjo"]
 load_path = "res://.godot/imported/textureChunk_1.png-e0720ace01e34a084536a9e8a7ee8f23.ctex"
@@ -10,6 +12,44 @@ load_path = "res://.godot/imported/textureChunk_1.png-e0720ace01e34a084536a9e8a7
 atlas = SubResource("CompressedTexture2D_ykyjo")
 region = Rect2(0, 0, 9, 9)
 filter_clip = true
+
+[sub_resource type="Animation" id="Animation_nmc1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4.5, 4.5)]
+}
+
+[sub_resource type="Animation" id="Animation_f46kd"]
+resource_name = "shake"
+length = 0.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.049999997, 0.1, 0.15, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(3.5, 4.5), Vector2(5.5, 4.5), Vector2(4.5, 5.5), Vector2(4.5, 3.5), Vector2(4.5, 4.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rerk"]
+_data = {
+&"RESET": SubResource("Animation_nmc1l"),
+&"shake": SubResource("Animation_f46kd")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ykyjo"]
 size = Vector2(0, 0)
@@ -44,7 +84,12 @@ collision_layer = 1
 collision_mask = 1
 
 [node name="sprite" parent="." index="1" unique_id=467322566]
+position = Vector2(4.5, 4.5)
 texture = SubResource("AtlasTexture_uxov2")
+centered = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sprite" index="0" unique_id=2042240118]
+libraries/ = SubResource("AnimationLibrary_3rerk")
 
 [node name="up" type="Area2D" parent="." index="2" unique_id=2030416467]
 position = Vector2(4, -5)
@@ -117,5 +162,11 @@ metadata/_edit_lock_ = true
 
 [node name="collision" type="CollisionShape2D" parent="right_far" index="0" unique_id=1838017470]
 shape = SubResource("RectangleShape2D_3rfka")
+
+[node name="fail_sound_meme" type="AudioStreamPlayer" parent="." index="10" unique_id=923107698]
+stream = ExtResource("3_uxov2")
+
+[node name="fail_sound" type="AudioStreamPlayer" parent="." index="11" unique_id=907279109]
+stream = ExtResource("4_nmc1l")
 
 [connection signal="area_entered" from="area" to="." method="_on_touch_goal"]

@@ -20,18 +20,23 @@ position = Vector2(99, 72)
 
 [node name="basic_wall" parent="." index="3" unique_id=140155416 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 72)
+trail_anim = "player"
 
 [node name="basic_wall2" parent="." index="4" unique_id=1789441628 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 81)
+trail_anim = "player"
 
 [node name="basic_wall3" parent="." index="5" unique_id=848569504 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 99)
+trail_anim = "player"
 
 [node name="basic_wall4" parent="." index="6" unique_id=628902400 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 63)
+trail_anim = "player"
 
 [node name="basic_wall5" parent="." index="7" unique_id=404538143 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 45)
+trail_anim = "player"
 
 [node name="number_wall" parent="." index="8" unique_id=290228808 instance=ExtResource("3_lje2i")]
 position = Vector2(36, 108)
