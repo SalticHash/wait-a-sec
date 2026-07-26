@@ -3,12 +3,13 @@ extends BoardElement2D
 
 @onready var last_position: Array[Vector2] = [position]
 var last_rotation: Array[float] = [0.0]
-
+var stuck: bool = false
 func _ready() -> void:
 	ScrGlobal.undo.connect(_return)
+
 func _physics_process(_delta: float) -> void:
 	super(_delta)
-	if visible and !ScrGlobal.cutscene and !ScrGlobal.won:
+	if visible and !ScrGlobal.cutscene and !ScrGlobal.won and !stuck:
 		_movement()
 
 
@@ -36,6 +37,13 @@ func _movement() -> void:
 	if Input.is_action_just_pressed("key_right"): dir = Vector2(distance, 0)
 	if Input.is_action_just_pressed("key_left"): dir = Vector2(-distance, 0)
 	
+	if $inside.has_overlapping_areas() and !stuck:
+		_create_trail()
+		stuck = true
+		$sprite.hide()
+		$inside.monitoring = false
+
+	
 	if dir:
 		if can_move(dir):
 			last_rotation.push_back($sprite.rotation)
@@ -56,6 +64,9 @@ func _movement() -> void:
 
 
 func _return() -> void:
+	stuck = false
+	$inside.monitoring = true
+	$sprite.show()
 	position = last_position.pop_back()
 	$sprite.rotation = last_rotation.pop_back()
 
