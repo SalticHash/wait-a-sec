@@ -6,14 +6,34 @@
 [ext_resource type="PackedScene" uid="uid://b572syq1rj7s5" path="res://objects/player.tscn" id="3_62vhw"]
 [ext_resource type="PackedScene" uid="uid://cnai42qg7u723" path="res://objects/goal.tscn" id="4_vynm1"]
 [ext_resource type="Texture2D" uid="uid://mh0la3vex32a" path="res://textures/numberDisplay_big_light.png" id="6_p15h7"]
-[ext_resource type="Texture2D" uid="uid://cow8gbbremft" path="res://textures/tutorial_text.png" id="8_p15h7"]
-[ext_resource type="Texture2D" uid="uid://bcqd3bwsice82" path="res://textures/continue_tip.png" id="9_rywhe"]
-[ext_resource type="Texture2D" uid="uid://sfqjbgj3pfh4" path="res://textures/level_text.png" id="9_uydtg"]
 [ext_resource type="AudioStream" uid="uid://bxu21s0qnpep" path="res://audio/snd_reset.ogg" id="10_pkye5"]
-[ext_resource type="Texture2D" uid="uid://mf35pog3hbpg" path="res://textures/undo_tip.png" id="11_4358y"]
-[ext_resource type="Texture2D" uid="uid://bqs7kqs8lptjv" path="res://textures/score_label.png" id="12_njk0a"]
+[ext_resource type="Texture2D" uid="uid://dbbey2kwp3ktk" path="res://textures/textureChunk_2.png" id="11_mub64"]
+[ext_resource type="Texture2D" uid="uid://brleud3g32ogh" path="res://textures/menu_numbers.png" id="12_rywhe"]
 [ext_resource type="AudioStream" uid="uid://thwb20kt303c" path="res://audio/clink.wav" id="12_uydtg"]
-[ext_resource type="Texture2D" uid="uid://dpaoxvx2qb4hr" path="res://font/numbers.png" id="13_11dht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p15h7"]
+atlas = ExtResource("11_mub64")
+region = Rect2(0, 45, 45, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rywhe"]
+atlas = ExtResource("11_mub64")
+region = Rect2(54, 36, 27, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mub64"]
+atlas = ExtResource("11_mub64")
+region = Rect2(0, 0, 45, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uydtg"]
+atlas = ExtResource("11_mub64")
+region = Rect2(0, 9, 45, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s35nk"]
+atlas = ExtResource("11_mub64")
+region = Rect2(0, 36, 54, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uvjf"]
+atlas = ExtResource("11_mub64")
+region = Rect2(0, 18, 27, 9)
 
 [node name="level_preset" type="Node2D" unique_id=707018245]
 script = ExtResource("1_62vhw")
@@ -34,7 +54,6 @@ position = Vector2(99, 45)
 position = Vector2(45, 99)
 
 [node name="enter_level_popup" type="Node2D" parent="." unique_id=1978777192]
-visible = false
 z_index = 1
 
 [node name="Cover" type="ColorRect" parent="enter_level_popup" unique_id=1411949169]
@@ -56,43 +75,47 @@ hframes = 10
 
 [node name="TutorialText" type="Sprite2D" parent="enter_level_popup" unique_id=573539929]
 visible = false
-position = Vector2(41, 61)
-texture = ExtResource("8_p15h7")
+position = Vector2(54, 70)
+texture = SubResource("AtlasTexture_p15h7")
 centered = false
 
 [node name="LevelText" type="Sprite2D" parent="enter_level_popup" unique_id=1063507228]
 visible = false
-position = Vector2(56, 43)
-texture = ExtResource("9_uydtg")
+position = Vector2(63, 43)
+texture = SubResource("AtlasTexture_rywhe")
 centered = false
 
-[node name="ContinueTip" type="Sprite2D" parent="enter_level_popup" unique_id=1935786556]
-position = Vector2(20, 103)
-texture = ExtResource("9_rywhe")
+[node name="PressSpace" type="Sprite2D" parent="enter_level_popup" unique_id=1935786556]
+position = Vector2(32, 103)
+texture = SubResource("AtlasTexture_mub64")
+centered = false
+
+[node name="ToContinue" type="Sprite2D" parent="enter_level_popup/PressSpace" unique_id=1155125244]
+position = Vector2(44, 0)
+texture = SubResource("AtlasTexture_uydtg")
 centered = false
 
 [node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=455021973]
 stream = ExtResource("10_pkye5")
 
 [node name="UndoTip" type="Sprite2D" parent="." unique_id=1150083987]
-position = Vector2(39, 132)
-texture = ExtResource("11_4358y")
+position = Vector2(0, 144)
+texture = SubResource("AtlasTexture_s35nk")
 centered = false
 
 [node name="Score" type="Sprite2D" parent="." unique_id=218367654]
-position = Vector2(57, 141)
-texture = ExtResource("12_njk0a")
+texture = SubResource("AtlasTexture_0uvjf")
 centered = false
 
 [node name="tens" type="Sprite2D" parent="Score" unique_id=1036844252]
-position = Vector2(30, 1)
-texture = ExtResource("13_11dht")
+position = Vector2(26, 2)
+texture = ExtResource("12_rywhe")
 centered = false
 hframes = 10
 
 [node name="units" type="Sprite2D" parent="Score" unique_id=1462375064]
-position = Vector2(35, 1)
-texture = ExtResource("13_11dht")
+position = Vector2(30, 2)
+texture = ExtResource("12_rywhe")
 centered = false
 hframes = 10
 
