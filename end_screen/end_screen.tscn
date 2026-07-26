@@ -3,10 +3,6 @@
 [ext_resource type="Script" uid="uid://do7iol83pusyt" path="res://end_screen/end_screen.gd" id="1_hmshp"]
 [ext_resource type="Texture2D" uid="uid://nxcr3khpnqo6" path="res://textures/logo.png" id="2_fwhm7"]
 [ext_resource type="Texture2D" uid="uid://bksl30k7phl7n" path="res://textures/end_screen_label.png" id="3_fwhm7"]
-<<<<<<< Updated upstream
-[ext_resource type="Texture2D" uid="uid://dpaoxvx2qb4hr" path="res://font/numbers.png" id="4_q7ipi"]
-=======
-[ext_resource type="Texture2D" uid="uid://dn7y6poniycfq" path="res://textures/logo_outline.png" id="3_mkgft"]
 [ext_resource type="Texture2D" uid="uid://dbbey2kwp3ktk" path="res://textures/textureChunk_2.png" id="4_hfn2g"]
 [ext_resource type="Texture2D" uid="uid://brleud3g32ogh" path="res://textures/menu_numbers.png" id="5_q7ipi"]
 
@@ -65,7 +61,6 @@ region = Rect2(18, 63, 37, 9)
 [sub_resource type="AtlasTexture" id="AtlasTexture_nyxi3"]
 atlas = ExtResource("4_hfn2g")
 region = Rect2(37, 72, 41, 9)
->>>>>>> Stashed changes
 
 [node name="EndScreen" type="Node2D" unique_id=1452646209]
 script = ExtResource("1_hmshp")
