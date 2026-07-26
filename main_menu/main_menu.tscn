@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cr2ntxmg6ydax" path="res://audio/snd_clock_2.ogg" id="5_t6bnd"]
 [ext_resource type="Texture2D" uid="uid://dn7y6poniycfq" path="res://textures/logo_outline.png" id="6_t6bnd"]
 [ext_resource type="Texture2D" uid="uid://dc7lhfe7vs64c" path="res://textures/start_text.png" id="7_t6bnd"]
+[ext_resource type="FontFile" uid="uid://cjy05tv16y7pe" path="res://font/font.png" id="8_ia84y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jh3y0"]
 shader = ExtResource("2_3f7m4")
@@ -208,6 +209,10 @@ _data = {
 &"enter": SubResource("Animation_6at21")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_jh3y0"]
+font = ExtResource("8_ia84y")
+font_size = 5
+
 [node name="MainMenu" type="Node2D" unique_id=1284493117]
 script = ExtResource("1_d3a7t")
 
@@ -228,3 +233,13 @@ modulate = Color(1, 1, 1, 0)
 position = Vector2(54, 126)
 texture = ExtResource("7_t6bnd")
 centered = false
+
+[node name="Label" type="Label" parent="StartText" unique_id=236284292]
+offset_left = -5.0
+offset_top = 11.0
+offset_right = 50.0
+offset_bottom = 16.0
+text = "PRESS SPACE"
+label_settings = SubResource("LabelSettings_jh3y0")
+horizontal_alignment = 1
+vertical_alignment = 1
