@@ -15,6 +15,7 @@ filter_clip = true
 
 [node name="BoardElement2D" type="Node2D" unique_id=1956486281]
 script = ExtResource("1_t4kao")
+trail_anim = "player"
 
 [node name="area" type="Area2D" parent="." unique_id=118502564]
 collision_layer = 2

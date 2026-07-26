@@ -2,7 +2,14 @@ extends Node2D
 class_name BoardElement2D
 
 @export var life_time: int = 5
-@export var trail_anim: String = "player"
+@export_enum(
+	"player",
+	"goal",
+	"wall",
+	"wall_orange",
+	"wallgreens",
+	"wall_cyan"
+) var trail_anim: String
 
 func _ready() -> void:
 	if ScrGlobal.level_time <= life_time:

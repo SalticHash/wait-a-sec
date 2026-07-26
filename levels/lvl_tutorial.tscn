@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://mnvnm5uxh645" path="res://objects/basic_wall.tscn" id="2_r43sy"]
 [ext_resource type="PackedScene" uid="uid://c1bb4eyxlkfdr" path="res://objects/number_wall.tscn" id="3_lje2i"]
 [ext_resource type="PackedScene" uid="uid://5sva6liolw68" path="res://objects/wall_orange.tscn" id="5_6rfba"]
+[ext_resource type="PackedScene" uid="uid://dgwwy4pethgob" path="res://objects/wall_green.tscn" id="6_41ajc"]
+[ext_resource type="PackedScene" uid="uid://ck1b36ouefxei" path="res://objects/wall_imp.tscn" id="7_a5b68"]
+[ext_resource type="PackedScene" uid="uid://c35ypi8gqn8uc" path="res://objects/wall_par.tscn" id="8_0fv3o"]
 
 [node name="lvl_tutorial" unique_id=707018245 instance=ExtResource("1_h4srm")]
 next_level = ExtResource("2_1brky")
@@ -14,29 +17,30 @@ tile_map_data = PackedByteArray("AAAEAAQAAAAIAAAAAAAEAAUAAAAIAAAAAAAEAAYAAAAIAAA
 
 [node name="player" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="0" unique_id=1674897621]
 position = Vector2(45, 72)
+trail_anim = ""
 
 [node name="goal" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="1" unique_id=1956486281]
 position = Vector2(99, 72)
 
 [node name="basic_wall" parent="." index="3" unique_id=140155416 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 72)
-trail_anim = "player"
+trail_anim = ""
 
 [node name="basic_wall2" parent="." index="4" unique_id=1789441628 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 81)
-trail_anim = "player"
+trail_anim = ""
 
 [node name="basic_wall3" parent="." index="5" unique_id=848569504 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 99)
-trail_anim = "player"
+trail_anim = ""
 
 [node name="basic_wall4" parent="." index="6" unique_id=628902400 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 63)
-trail_anim = "player"
+trail_anim = ""
 
 [node name="basic_wall5" parent="." index="7" unique_id=404538143 instance=ExtResource("2_r43sy")]
 position = Vector2(81, 45)
-trail_anim = "player"
+trail_anim = ""
 
 [node name="number_wall" parent="." index="8" unique_id=290228808 instance=ExtResource("3_lje2i")]
 position = Vector2(36, 108)
@@ -62,3 +66,21 @@ life_time = 4
 
 [node name="wall_orange" parent="." index="14" unique_id=301153872 instance=ExtResource("5_6rfba")]
 position = Vector2(63, 72)
+trail_anim = ""
+
+[node name="enter_level_popup" parent="." index="15" unique_id=1978777192]
+visible = false
+
+[node name="wall_green" parent="." index="16" unique_id=24129445 instance=ExtResource("6_41ajc")]
+position = Vector2(63, 54)
+trail_anim = ""
+
+[node name="wall_green2" parent="." index="17" unique_id=817591456 instance=ExtResource("6_41ajc")]
+position = Vector2(63, 90)
+trail_anim = ""
+
+[node name="wall_imp" parent="." index="18" unique_id=221971982 instance=ExtResource("7_a5b68")]
+position = Vector2(63, 63)
+
+[node name="wall_par" parent="." index="19" unique_id=1709069058 instance=ExtResource("8_0fv3o")]
+position = Vector2(63, 81)

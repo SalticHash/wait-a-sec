@@ -13,6 +13,7 @@ filter_clip = true
 
 [node name="wall_green" unique_id=1956486281 instance=ExtResource("1_ij4iu")]
 script = ExtResource("2_8hj21")
+trail_anim = "wallgreens"
 
 [node name="sprite" parent="." index="1" unique_id=467322566]
 texture = SubResource("AtlasTexture_inm1u")

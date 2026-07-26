@@ -176,9 +176,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0klyn")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"wallgreens",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="trail_effect" type="AnimatedSprite2D" unique_id=1728405040]

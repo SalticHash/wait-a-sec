@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ck1b36ouefxei"]
+
+[ext_resource type="PackedScene" uid="uid://ddqanxrilt141" path="res://objects/BoardElement2D.tscn" id="1_4fpq2"]
+[ext_resource type="Script" uid="uid://bn0f3kmnvk2uk" path="res://scripts/wall_onoff.gd" id="2_a8r3m"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t81bq"]
+load_path = "res://.godot/imported/textureChunk_1.png-e0720ace01e34a084536a9e8a7ee8f23.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6yvp"]
+atlas = SubResource("CompressedTexture2D_t81bq")
+region = Rect2(45, 9, 9, 9)
+filter_clip = true
+
+[node name="wall_imp" unique_id=1956486281 instance=ExtResource("1_4fpq2")]
+script = ExtResource("2_a8r3m")
+on_off_number = 1
+trail_anim = "wall_cyan"
+
+[node name="sprite" parent="." index="1" unique_id=467322566]
+texture = SubResource("AtlasTexture_d6yvp")
