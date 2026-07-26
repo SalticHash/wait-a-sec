@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c64yxmamwsj1g" path="res://levels/lvl_5.tscn" id="2_dt27g"]
 [ext_resource type="PackedScene" uid="uid://c1bb4eyxlkfdr" path="res://objects/number_wall.tscn" id="2_isgkd"]
 [ext_resource type="PackedScene" uid="uid://dgwwy4pethgob" path="res://objects/wall_green.tscn" id="3_dt27g"]
+[ext_resource type="PackedScene" uid="uid://hdoil2c7de8e" path="res://objects/key.tscn" id="5_baah5"]
 
 [node name="lvl_6" unique_id=707018245 instance=ExtResource("1_paccc")]
 next_level = ExtResource("2_dt27g")
@@ -14,11 +15,12 @@ tile_map_data = PackedByteArray("AAAEAAQAAAAIAAAAAAAEAAUAAAAIAAAAAAAEAAYAAAAIAAA
 [node name="level_timer" parent="." index="1" unique_id=1695177744]
 level_time = 16
 
-[node name="player" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="0" unique_id=1674897621]
-position = Vector2(36, 108)
-
-[node name="goal" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="1" unique_id=1956486281]
+[node name="goal" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="0" unique_id=1956486281]
 position = Vector2(72, 99)
+use_key = true
+
+[node name="player" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="1" unique_id=1674897621]
+position = Vector2(36, 108)
 
 [node name="number_wall" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="2" unique_id=872758901 instance=ExtResource("2_isgkd")]
 position = Vector2(54, 99)
@@ -55,3 +57,6 @@ life_time = 9
 [node name="number_wall4" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="10" unique_id=201746972 instance=ExtResource("2_isgkd")]
 position = Vector2(90, 108)
 life_time = 9
+
+[node name="key" parent="." index="8" unique_id=917081905 instance=ExtResource("5_baah5")]
+position = Vector2(72, 63)
