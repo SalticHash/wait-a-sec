@@ -3,21 +3,29 @@ extends Node2D
 @export var next_level: PackedScene
 @export var final_level: bool = false
 
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_just_pressed("key_reset") and !ScrGlobal.won:
+var intro_buffer = 0.25
+func _physics_process(delta: float) -> void:
+	if ScrGlobal.won:
+		if !ScrGlobal.cutscene:
+			ScrGlobal.cutscene = true
+			var t = 0.5
+			while ScrGlobal.level_time > 0:
+				ScrGlobal.level_time -= 1
+				await get_tree().create_timer(t).timeout
+				t *= 0.8
+			ScrGlobal.cutscene = false
+			ScrGlobal._load_level(next_level)
+		return
+	if ScrGlobal.cutscene:
+		intro_buffer -= delta
+		if Input.is_action_just_pressed("continue") and intro_buffer < 0.0:
+			ScrGlobal.cutscene = false
+			$enter_level_popup.hide()
+		return
+	if Input.is_action_just_pressed("key_reset"):
 		ScrGlobal._reload_level()
 		ScrGlobal.reset_level = true
-	if ScrGlobal.won and !ScrGlobal.cutscene:
-		ScrGlobal.cutscene = true
-		var t = 0.5
-		while ScrGlobal.level_time > 0:
-			ScrGlobal.level_time -= 1
-			await get_tree().create_timer(t).timeout
-			t *= 0.8
-		ScrGlobal.cutscene = false
-		ScrGlobal._load_level(next_level)
-		#queue_free()
-	if Input.is_action_just_pressed("key_undo") and ScrGlobal.level_time < ScrGlobal.original_level_time and !ScrGlobal.won:
+	if Input.is_action_just_pressed("key_undo") and ScrGlobal.level_time < ScrGlobal.original_level_time:
 		ScrGlobal.level_time += 1
 		ScrGlobal.undo.emit()
 
@@ -36,6 +44,4 @@ func _ready() -> void:
 		
 	ScrGlobal.cutscene = true
 	await get_tree().create_timer(1.0).timeout
-	ScrGlobal.cutscene = false
-	$enter_level_popup.hide()
 	

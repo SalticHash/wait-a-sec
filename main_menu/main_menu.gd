@@ -5,8 +5,8 @@ extends Node2D
 func _ready() -> void:
 	$AnimationPlayer.play("enter")
 
-func _process(delta: float) -> void:
-	if Input.is_anything_pressed() and $AnimationPlayer.current_animation_position > 4.5:
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("continue") and $AnimationPlayer.current_animation_position > 4.5:
 		get_tree().change_scene_to_file("res://levels/lvl_tutorial.tscn")
 
 func _instantiate_node(anim_name: String) -> void:
