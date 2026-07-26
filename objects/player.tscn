@@ -231,5 +231,3 @@ stream = ExtResource("3_uxov2")
 
 [node name="fail_sound" type="AudioStreamPlayer" parent="." index="18" unique_id=907279109]
 stream = ExtResource("4_nmc1l")
-
-[connection signal="area_entered" from="area" to="." method="_on_touch_goal"]

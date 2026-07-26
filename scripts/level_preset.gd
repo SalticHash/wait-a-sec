@@ -53,6 +53,8 @@ func _ready() -> void:
 		$enter_level_popup/tens.frame = int(lvl / 10.0)
 		$enter_level_popup/LevelText.show()
 	else:
+		$enter_level_popup/tens.hide()
+		$enter_level_popup/units.hide()
 		$enter_level_popup/TutorialText.show()
 		
 	ScrGlobal.cutscene = true

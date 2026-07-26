@@ -56,7 +56,7 @@ hframes = 10
 
 [node name="TutorialText" type="Sprite2D" parent="enter_level_popup" unique_id=573539929]
 visible = false
-position = Vector2(41, 43)
+position = Vector2(41, 61)
 texture = ExtResource("8_p15h7")
 centered = false
 

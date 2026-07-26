@@ -50,11 +50,17 @@ func _movement() -> void:
 			_efective_move()
 			$sprite.rotation = dir.angle()
 			position += dir
+			if ScrGlobal.level_time == 0: return
+			
 			await get_tree().physics_frame
 			if $inside.has_overlapping_areas() and !stuck:
 				_disappear()
 				$inside.monitoring = false
 				stuck = true
+				_create_trail()
+			if $area.has_overlapping_areas() and !ScrGlobal.won:
+				$sprite.hide()
+				ScrGlobal.won = true
 		else:
 			$sprite/AnimationPlayer.play("RESET")
 			$sprite/AnimationPlayer.advance(0)
@@ -80,10 +86,3 @@ func _efective_move() -> void:
 	_create_trail()
 	ScrGlobal.level_time -= 1
 	
-
-
-func _on_touch_goal(_area: Area2D) -> void:
-	if ScrGlobal.won: return
-	_create_trail()
-	$sprite.hide()
-	ScrGlobal.won = true
