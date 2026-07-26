@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://c562as5dp58fk"]
+
+[ext_resource type="FontFile" uid="uid://cjy05tv16y7pe" path="res://font/font.png" id="1_72q5w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jh3y0"]
+font = ExtResource("1_72q5w")
+font_size = 5
+
+[node name="EndScreen" type="Control" unique_id=2045933925]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="Label" parent="." unique_id=1842961051]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -42.5
+offset_right = 45.0
+offset_bottom = 42.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "THANKS FOR PLAYING
+OUR SHORT DEMO!
+
+CREDITS:
+ANDRES CARMIOL
+:LEAD PROGRAMER
+:ARTIST
+:LEVEL DESIGNER
+
+SALTICHASH
+:PROGRAMER
+:PUBLISHING
+:VERSION CONTROL"
+label_settings = SubResource("LabelSettings_jh3y0")
+vertical_alignment = 1

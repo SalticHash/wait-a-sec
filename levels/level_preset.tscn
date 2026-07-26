@@ -10,6 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://cow8gbbremft" path="res://textures/tutorial_text.png" id="8_p15h7"]
 [ext_resource type="Texture2D" uid="uid://sfqjbgj3pfh4" path="res://textures/level_text.png" id="9_uydtg"]
 [ext_resource type="AudioStream" uid="uid://bxu21s0qnpep" path="res://audio/snd_reset.ogg" id="10_pkye5"]
+[ext_resource type="FontFile" uid="uid://cjy05tv16y7pe" path="res://font/font.png" id="11_p15h7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jh3y0"]
+font = ExtResource("11_p15h7")
+font_size = 5
 
 [node name="level_preset" type="Node2D" unique_id=707018245]
 script = ExtResource("1_62vhw")
@@ -23,13 +28,15 @@ metadata/_edit_lock_ = true
 
 [node name="level_objects" type="Node" parent="." unique_id=371145211]
 
+[node name="goal" parent="level_objects" unique_id=1956486281 instance=ExtResource("4_vynm1")]
+position = Vector2(99, 45)
+trail_anim = "goal"
+
 [node name="player" parent="level_objects" unique_id=1674897621 instance=ExtResource("3_62vhw")]
 position = Vector2(45, 99)
 
-[node name="goal" parent="level_objects" unique_id=1956486281 instance=ExtResource("4_vynm1")]
-position = Vector2(99, 45)
-
 [node name="enter_level_popup" type="Node2D" parent="." unique_id=1978777192]
+visible = false
 z_index = 1
 
 [node name="Cover" type="ColorRect" parent="enter_level_popup" unique_id=1411949169]
@@ -68,3 +75,14 @@ centered = false
 
 [node name="reset_sound" type="AudioStreamPlayer" parent="." unique_id=455021973]
 stream = ExtResource("10_pkye5")
+
+[node name="UndoTip" type="Label" parent="." unique_id=1218878645]
+visible = false
+offset_left = 40.0
+offset_top = 133.0
+offset_right = 115.0
+offset_bottom = 138.0
+text = "UNDO OR RESTART"
+label_settings = SubResource("LabelSettings_jh3y0")
+horizontal_alignment = 1
+vertical_alignment = 1

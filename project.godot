@@ -21,7 +21,7 @@ config/icon="uid://dt87wrmmuylxb"
 
 [audio]
 
-buses/default_bus_layout="uid://tsovf2q2181k"
+buses/default_bus_layout=""
 
 [autoload]
 

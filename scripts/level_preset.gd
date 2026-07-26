@@ -8,11 +8,13 @@ func _physics_process(delta: float) -> void:
 	if ScrGlobal.won:
 		if !ScrGlobal.cutscene:
 			ScrGlobal.cutscene = true
-			var t = 0.5
+			var time_left = ScrGlobal.level_time
 			while ScrGlobal.level_time > 0:
 				ScrGlobal.level_time -= 1
-				await get_tree().create_timer(t).timeout
-				t *= 0.8
+				await get_tree().create_timer(
+					clampf(remap(ScrGlobal.level_time, time_left, time_left / 3.0, 0.25, 0.05), 0.05, 0.25)
+				).timeout
+			await get_tree().create_timer(1.25).timeout
 			ScrGlobal.cutscene = false
 			ScrGlobal._load_level(next_level)
 		return
@@ -30,6 +32,7 @@ func _physics_process(delta: float) -> void:
 		ScrGlobal.undo.emit()
 
 func _ready() -> void:
+	$enter_level_popup.show()
 	if ScrGlobal.reset_level:
 		$reset_sound.play()
 		ScrGlobal.reset_level = false
@@ -41,7 +44,5 @@ func _ready() -> void:
 	else:
 		$enter_level_popup/TutorialText.show()
 		
-		
 	ScrGlobal.cutscene = true
-	await get_tree().create_timer(1.0).timeout
 	

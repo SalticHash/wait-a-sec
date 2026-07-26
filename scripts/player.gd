@@ -8,7 +8,9 @@ func _ready() -> void:
 	ScrGlobal.undo.connect(_return)
 
 func _physics_process(_delta: float) -> void:
-	super(_delta)
+	if ScrGlobal.level_time == 0:
+		_disappear()
+
 	if visible and !ScrGlobal.cutscene and !ScrGlobal.won and !stuck:
 		_movement()
 
@@ -38,10 +40,9 @@ func _movement() -> void:
 	if Input.is_action_just_pressed("key_left"): dir = Vector2(-distance, 0)
 	
 	if $inside.has_overlapping_areas() and !stuck:
-		_create_trail()
-		stuck = true
-		$sprite.hide()
+		_disappear()
 		$inside.monitoring = false
+		stuck = true
 
 	
 	if dir:
@@ -64,9 +65,11 @@ func _movement() -> void:
 
 
 func _return() -> void:
-	stuck = false
-	$inside.monitoring = true
-	$sprite.show()
+	if !visible:
+		_appear()
+	if stuck:
+		$inside.monitoring = true
+		stuck = false
 	position = last_position.pop_back()
 	$sprite.rotation = last_rotation.pop_back()
 
@@ -88,6 +91,7 @@ func _spr_dir_reset() -> void:
 
 
 func _on_touch_goal(_area: Area2D) -> void:
+	if ScrGlobal.won: return
 	_create_trail()
-	_disappear()
+	$sprite.hide()
 	ScrGlobal.won = true
