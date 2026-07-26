@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://bg1vf2q456agy" path="res://main_menu/main_menu.gdshader" id="2_3f7m4"]
 [ext_resource type="AudioStream" uid="uid://dg4eabjwkx0o5" path="res://audio/snd_clock_1.ogg" id="4_6tl50"]
 [ext_resource type="AudioStream" uid="uid://cr2ntxmg6ydax" path="res://audio/snd_clock_2.ogg" id="5_t6bnd"]
+[ext_resource type="Texture2D" uid="uid://dn7y6poniycfq" path="res://textures/logo_outline.png" id="6_t6bnd"]
 [ext_resource type="Texture2D" uid="uid://dc7lhfe7vs64c" path="res://textures/start_text.png" id="7_t6bnd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jh3y0"]
@@ -49,6 +50,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Logo:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_oa53l")]
+}
 
 [sub_resource type="Animation" id="Animation_6at21"]
 resource_name = "enter"
@@ -61,10 +74,10 @@ tracks/0/path = NodePath("Logo:position")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.75, 1.25, 1.75, 2.25, 2.75),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.75, 1.25, 1.75, 2.25, 2.75, 3.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(18, -36), Vector2(18, -27), Vector2(18, -18), Vector2(18, -9), Vector2(18, 0), Vector2(18, 9), Vector2(18, 18)]
+"values": [Vector2(18, -36), Vector2(18, -27), Vector2(18, -18), Vector2(18, -9), Vector2(18, 0), Vector2(18, 9), Vector2(18, 18), Vector2(17, 16)]
 }
 tracks/1/type = "audio"
 tracks/1/imported = false
@@ -175,6 +188,18 @@ tracks/5/keys = {
 "args": ["logo_trail_2"],
 "method": &"_instantiate_node"
 }]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Logo:texture")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_oa53l"), ExtResource("6_t6bnd")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_og6xe"]

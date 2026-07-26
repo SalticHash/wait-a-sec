@@ -3,7 +3,7 @@ shader_type canvas_item;
 uniform vec4 color: source_color;
 
 void fragment() {
-	if (COLOR.a == 1.0) {
+	if (COLOR.a == 1.0 && COLOR.rbg != vec3(0.0)) {
 		COLOR.rgb = mix(COLOR.rgba, color, color.a).rgb;
 	}
 }
