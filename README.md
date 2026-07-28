@@ -22,6 +22,6 @@ You can also undo moves by pressing Z or reset the level with Ctrl+Z
 
 ---
 
-**DEV BEST SCORE:** 18
+**DEV BEST SCORE:** 19
 
 This game was not only made for the GMTK Game Jam 2026 with a theme of Countdown, it was also made for Hack Club's Jame Gam
