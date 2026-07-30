@@ -58,7 +58,7 @@ position = Vector2(99, 45)
 position = Vector2(45, 99)
 
 [node name="enter_level_popup" type="Node2D" parent="." unique_id=1978777192]
-z_index = 1
+z_index = 2
 
 [node name="Cover" type="ColorRect" parent="enter_level_popup" unique_id=1411949169]
 offset_right = 153.0

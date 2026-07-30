@@ -23,17 +23,13 @@ use_key = true
 [node name="player" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="1" unique_id=1674897621]
 position = Vector2(45, 81)
 
-[node name="number_wall" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="2" unique_id=1325276411 instance=ExtResource("3_sxwgk")]
-position = Vector2(45, 63)
-life_time = 4
-
-[node name="wall_green" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="3" unique_id=80964987 instance=ExtResource("4_shng8")]
+[node name="wall_green" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="2" unique_id=80964987 instance=ExtResource("4_shng8")]
 position = Vector2(99, 81)
 life_time = 7
 
-[node name="number_wall2" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="4" unique_id=1835618233 instance=ExtResource("3_sxwgk")]
+[node name="number_wall2" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="3" unique_id=1835618233 instance=ExtResource("3_sxwgk")]
 position = Vector2(81, 81)
 life_time = 9
 
-[node name="key" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="5" unique_id=2028473334 instance=ExtResource("5_3yd6w")]
+[node name="key" parent="level_objects" parent_id_path=PackedInt32Array(371145211) index="4" unique_id=2028473334 instance=ExtResource("5_3yd6w")]
 position = Vector2(108, 81)
