@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://dg4eabjwkx0o5" path="res://audio/snd_clock_1.ogg" id="4_6tl50"]
 [ext_resource type="AudioStream" uid="uid://cr2ntxmg6ydax" path="res://audio/snd_clock_2.ogg" id="5_t6bnd"]
 [ext_resource type="Texture2D" uid="uid://dbbey2kwp3ktk" path="res://textures/textureChunk_2.png" id="6_6tl50"]
+[ext_resource type="Script" uid="uid://de3yc7qjhtb8b" path="res://main_menu/menu_button.gd" id="7_6at21"]
+[ext_resource type="PackedScene" uid="uid://bdvfpirj81vsr" path="res://main_menu/menu_button.tscn" id="7_t6bnd"]
+[ext_resource type="Texture2D" uid="uid://dn1a0lwuy2ce" path="res://textures/textureChunk_4.png" id="8_og6xe"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jh3y0"]
 shader = ExtResource("2_3f7m4")
@@ -191,6 +194,11 @@ region = Rect2(0, 0, 45, 9)
 atlas = ExtResource("6_6tl50")
 region = Rect2(0, 27, 45, 9)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostoq"]
+atlas = ExtResource("8_og6xe")
+region = Rect2(0, 0, 27, 9)
+filter_clip = true
+
 [node name="MainMenu" type="Node2D" unique_id=1284493117]
 script = ExtResource("1_d3a7t")
 
@@ -216,3 +224,15 @@ centered = false
 position = Vector2(0, 10)
 texture = SubResource("AtlasTexture_ia84y")
 centered = false
+
+[node name="menu_button" type="Node2D" parent="." unique_id=657934791]
+position = Vector2(99, 117)
+script = ExtResource("7_6at21")
+
+[node name="sprite" type="Sprite2D" parent="menu_button" unique_id=1051098897]
+texture = SubResource("AtlasTexture_ostoq")
+centered = false
+
+[node name="menu_button2" parent="." unique_id=1910263975 instance=ExtResource("7_t6bnd")]
+position = Vector2(27, 117)
+left = true

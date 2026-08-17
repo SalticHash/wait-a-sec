@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dw76ceson20ng" path="res://textures/textureChunk_1.png" id="1_x7w8b"]
 [ext_resource type="Script" uid="uid://cbb3timp8hm3q" path="res://scripts/trail_effect.gd" id="2_of71w"]
 [ext_resource type="Texture2D" uid="uid://34jldntxssjd" path="res://textures/logo_trail_2.png" id="2_ttv0o"]
+[ext_resource type="Texture2D" uid="uid://dn1a0lwuy2ce" path="res://textures/textureChunk_4.png" id="4_ttv0o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a1sqb"]
 atlas = ExtResource("1_x7w8b")
@@ -40,6 +41,22 @@ region = Rect2(135, 0, 135, 54)
 [sub_resource type="AtlasTexture" id="AtlasTexture_gj4ls"]
 atlas = ExtResource("2_ttv0o")
 region = Rect2(270, 0, 135, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txcow"]
+atlas = ExtResource("4_ttv0o")
+region = Rect2(0, 54, 36, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jqoh"]
+atlas = ExtResource("4_ttv0o")
+region = Rect2(0, 63, 36, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cl0s3"]
+atlas = ExtResource("4_ttv0o")
+region = Rect2(0, 18, 27, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wptxg"]
+atlas = ExtResource("4_ttv0o")
+region = Rect2(0, 27, 27, 9)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_of71w"]
 atlas = ExtResource("1_x7w8b")
@@ -123,6 +140,28 @@ animations = [{
 }],
 "loop": 0,
 "name": &"logo_trail_2",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txcow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jqoh")
+}],
+"loop": 0,
+"name": &"menu_opt",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cl0s3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wptxg")
+}],
+"loop": 0,
+"name": &"menu_start",
 "speed": 8.0
 }, {
 "frames": [{

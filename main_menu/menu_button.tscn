@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bdvfpirj81vsr"]
+
+[ext_resource type="Texture2D" uid="uid://dn1a0lwuy2ce" path="res://textures/textureChunk_4.png" id="1_ejjb0"]
+[ext_resource type="Script" uid="uid://de3yc7qjhtb8b" path="res://main_menu/menu_button.gd" id="1_u3hdq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ostoq"]
+atlas = ExtResource("1_ejjb0")
+region = Rect2(0, 0, 27, 9)
+filter_clip = true
+
+[node name="menu_button" type="Node2D" unique_id=657934791]
+script = ExtResource("1_u3hdq")
+
+[node name="sprite" type="Sprite2D" parent="." unique_id=1051098897]
+texture = SubResource("AtlasTexture_ostoq")
+centered = false
