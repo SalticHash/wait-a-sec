@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnvlyav3e010w"
-path="res://.godot/imported/press_space.png-244567fc0a699a9a2e9a8beb2e10f51c.ctex"
+uid="uid://bcqd3bwsice82"
+path="res://.godot/imported/continue_tip.png-c5f46b657027be612eb1f589a043316f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/press_space.png"
-dest_files=["res://.godot/imported/press_space.png-244567fc0a699a9a2e9a8beb2e10f51c.ctex"]
+source_file="res://textures/OLD,UNUSED/continue_tip.png"
+dest_files=["res://.godot/imported/continue_tip.png-c5f46b657027be612eb1f589a043316f.ctex"]
 
 [params]
 

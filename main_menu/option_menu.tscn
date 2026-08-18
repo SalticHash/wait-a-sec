@@ -1,11 +1,35 @@
 [gd_scene format=3 uid="uid://bfenxaarhn4p1"]
 
 [ext_resource type="PackedScene" uid="uid://bdvfpirj81vsr" path="res://main_menu/menu_button.tscn" id="1_7e2fh"]
+[ext_resource type="PackedScene" uid="uid://t5w03dlal8j7" path="res://main_menu/custom_text.tscn" id="2_x274i"]
 
 [node name="option_menu" type="Node2D" unique_id=776951086]
+metadata/_edit_lock_ = true
 
 [node name="menu_button" parent="." unique_id=689758335 instance=ExtResource("1_7e2fh")]
-position = Vector2(63, 81)
+position = Vector2(117, 135)
 act_interact = "res://main_menu/main_menu.tscn"
 button_id = 0
 select_target_id = 1
+
+[node name="custom_text" parent="." unique_id=1129399909 instance=ExtResource("2_x274i")]
+position = Vector2(9, 9)
+text = "* FLOOR AND BG CONTRAST [ooooo|||]
+
+* DIFFICULTY:
+   - HARD
+   - EASY
+   - THOSE ARROWS *
+
+* SKIN:
+   - DEFAULT *
+   - [BLOCKED]
+   - [BLOCKED]
+   - [BLOCKED]
+
+* MONEY: 109120124701122512
+
+
+
+DISCLAIMER,THIS INFO IS JUST FOR
+SHOW AND TESTING"

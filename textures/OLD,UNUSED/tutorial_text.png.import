@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcqd3bwsice82"
-path="res://.godot/imported/continue_tip.png-aa3de7dc4bfe4c2a47dbd4e1a9a8cf68.ctex"
+uid="uid://cow8gbbremft"
+path="res://.godot/imported/tutorial_text.png-a755eafd488a36c4e1c76ad6a47ebd6d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/continue_tip.png"
-dest_files=["res://.godot/imported/continue_tip.png-aa3de7dc4bfe4c2a47dbd4e1a9a8cf68.ctex"]
+source_file="res://textures/OLD,UNUSED/tutorial_text.png"
+dest_files=["res://.godot/imported/tutorial_text.png-a755eafd488a36c4e1c76ad6a47ebd6d.ctex"]
 
 [params]
 

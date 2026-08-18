@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mf35pog3hbpg"
-path="res://.godot/imported/undo_tip.png-e67653455a2d20b3a4351e8fa2db1588.ctex"
+uid="uid://sfqjbgj3pfh4"
+path="res://.godot/imported/level_text.png-8dd6864eacf31c07eb506808a891a400.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/undo_tip.png"
-dest_files=["res://.godot/imported/undo_tip.png-e67653455a2d20b3a4351e8fa2db1588.ctex"]
+source_file="res://textures/OLD,UNUSED/level_text.png"
+dest_files=["res://.godot/imported/level_text.png-8dd6864eacf31c07eb506808a891a400.ctex"]
 
 [params]
 
