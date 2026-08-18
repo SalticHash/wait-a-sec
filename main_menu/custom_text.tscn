@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://t5w03dlal8j7"]
+
+[ext_resource type="Script" uid="uid://m5gcxbvisenh" path="res://main_menu/custom_text.gd" id="1_6t7j2"]
+
+[node name="custom_text" type="Node2D" unique_id=1129399909]
+script = ExtResource("1_6t7j2")
+text = "]TEST"
