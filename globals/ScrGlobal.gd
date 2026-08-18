@@ -22,6 +22,9 @@ var won: bool = false
 var current_level = preload("res://levels/lvl_tutorial.tscn")
 var cutscene: bool = false
 var score: int = 0
+var played_intro: bool = false
+
+var select_button_id: int = 0
 
 func _reload_level() -> void:
 	get_tree().change_scene_to_packed(current_level)

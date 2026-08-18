@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite2D
 class_name WASMenuButton
 
 const AUDIO_SCENE: PackedScene = preload("res://objects/instant_sound.tscn")
@@ -6,8 +6,9 @@ const SND_CLOCK_1 = preload("res://audio/snd_clock_1.ogg")
 const SND_CLOCK_2 = preload("res://audio/snd_clock_2.ogg")
 const SND_JIGGLE = preload("res://audio/snd_failed_move.ogg")
 
+
 @export_group("Actions", "act_")
-@export var act_interact = null
+@export var act_interact: String = "res://levels/lvl_tutorial.tscn"
 @export var act_left: WASMenuButton = null
 @export var act_right: WASMenuButton = null
 @export var act_up: WASMenuButton = null
@@ -16,16 +17,27 @@ const SND_JIGGLE = preload("res://audio/snd_failed_move.ogg")
 @export var on_spr: Rect2 = Rect2(0.0, 0.0, 27.0, 9.0)
 @export var off_spr: Rect2 = Rect2(0.0, 9.0, 27.0, 9.0)
 @export var trail_anim = "menu_start"
-@export var selected: bool = false
+@export var button_id: int = -4
+@export var select_target_id: int = -4
 
+
+var selected: bool = false
 var active_cooldown: int = 0
 
+
 func _ready() -> void:
-	$sprite.texture.region = on_spr if selected else off_spr
+	if ScrGlobal.select_button_id == button_id:
+		self.texture.region = on_spr
+		selected = true
+		ScrGlobal.select_button_id = -4
+		if ScrGlobal.played_intro:
+			_play_sound(SND_CLOCK_2)
+		return
+	self.texture.region = off_spr
 
 
 func _physics_process(_delta: float) -> void:
-	if not selected:
+	if not selected or not ScrGlobal.played_intro:
 		return
 	if active_cooldown > 0:
 		active_cooldown -= 1
@@ -76,7 +88,8 @@ func _act_down() -> void:
 
 func _act_interact() -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		_play_sound(SND_CLOCK_2)
+		ScrGlobal.select_button_id = select_target_id
+		get_tree().change_scene_to_file(act_interact)
 
 
 # ^ # Button Action Functions # ^ #
@@ -86,18 +99,23 @@ func _act_interact() -> void:
 func _activate() -> void:
 	selected = true
 	active_cooldown = 1
-	$sprite.texture.region = on_spr
+	self.texture.region = on_spr
 	_play_sound(SND_CLOCK_1)
 
 
 func _deactivate() -> void:
 	selected = false
-	$sprite.texture.region = off_spr
+	self.texture.region = off_spr
 	_create_trail()
 
 
 func _jiggle() -> void:
 	_play_sound(SND_JIGGLE)
+	$AnimationPlayer.play("RESET")
+	$AnimationPlayer.advance(0)
+	$AnimationPlayer.play("shake")
+	$AnimationPlayer.advance(0)
+	active_cooldown = 10
 
 # ^ # Other Button Functions # ^ #
 

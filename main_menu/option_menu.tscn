@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bfenxaarhn4p1"]
+
+[ext_resource type="PackedScene" uid="uid://bdvfpirj81vsr" path="res://main_menu/menu_button.tscn" id="1_7e2fh"]
+
+[node name="option_menu" type="Node2D" unique_id=776951086]
+
+[node name="menu_button" parent="." unique_id=689758335 instance=ExtResource("1_7e2fh")]
+position = Vector2(63, 81)
+act_interact = "res://main_menu/main_menu.tscn"
+button_id = 0
+select_target_id = 1

@@ -5,7 +5,6 @@
 [ext_resource type="Shader" uid="uid://bg1vf2q456agy" path="res://main_menu/main_menu.gdshader" id="2_3f7m4"]
 [ext_resource type="AudioStream" uid="uid://dg4eabjwkx0o5" path="res://audio/snd_clock_1.ogg" id="4_6tl50"]
 [ext_resource type="AudioStream" uid="uid://cr2ntxmg6ydax" path="res://audio/snd_clock_2.ogg" id="5_t6bnd"]
-[ext_resource type="Texture2D" uid="uid://dbbey2kwp3ktk" path="res://textures/textureChunk_2.png" id="6_6tl50"]
 [ext_resource type="PackedScene" uid="uid://bdvfpirj81vsr" path="res://main_menu/menu_button.tscn" id="7_t6bnd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jh3y0"]
@@ -41,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("StartText:modulate")
+tracks/2/path = NodePath("b_opt:material:shader_parameter/color")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -49,6 +48,42 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("b_start:material:shader_parameter/color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("b_opt:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("b_start:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_6at21"]
@@ -133,25 +168,13 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("StartText:modulate")
+tracks/4/path = NodePath(".")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(4.5, 6.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0.25, 0.83, 1.3, 1.75, 2.31, 2.8, 3.25),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
@@ -177,30 +200,155 @@ tracks/5/keys = {
 "method": &"_instantiate_node"
 }]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("b_start:modulate")
+tracks/5/interp = 0
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 3.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("b_opt:modulate")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("b_start:material:shader_parameter/color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.25, 4.5),
+"transitions": PackedFloat32Array(0, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("b_opt:material:shader_parameter/color")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3.25, 4.5),
+"transitions": PackedFloat32Array(0, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6tl50"]
+resource_name = "entered"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(18, 18)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Logo:material:shader_parameter/color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("b_opt:material:shader_parameter/color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("b_start:material:shader_parameter/color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("b_start:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("b_opt:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_og6xe"]
 _data = {
 &"RESET": SubResource("Animation_ia84y"),
-&"enter": SubResource("Animation_6at21")
+&"enter": SubResource("Animation_6at21"),
+&"entered": SubResource("Animation_6tl50")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6bnd"]
-atlas = ExtResource("6_6tl50")
-region = Rect2(0, 0, 45, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ia84y"]
-atlas = ExtResource("6_6tl50")
-region = Rect2(0, 27, 45, 9)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ia84y"]
+shader = ExtResource("2_3f7m4")
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ejjb0"]
 load_path = "res://.godot/imported/textureChunk_4.png-bc333da2e3ced6e4b505f34f837d8757.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6at21"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tl50"]
 atlas = SubResource("CompressedTexture2D_ejjb0")
 region = Rect2(0, 9, 27, 9)
 filter_clip = true
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_og6xe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6at21"]
+shader = ExtResource("2_3f7m4")
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6bnd"]
 atlas = SubResource("CompressedTexture2D_ejjb0")
 region = Rect2(0, 9, 27, 9)
 filter_clip = true
@@ -220,34 +368,21 @@ libraries/ = SubResource("AnimationLibrary_og6xe")
 
 [node name="TimerSounds" type="AudioStreamPlayer" parent="." unique_id=378312009]
 
-[node name="StartText" type="Sprite2D" parent="." unique_id=999143273]
-modulate = Color(1, 1, 1, 0)
-position = Vector2(54, 126)
-texture = SubResource("AtlasTexture_t6bnd")
-centered = false
-
-[node name="PressSpace" type="Sprite2D" parent="StartText" unique_id=629275828]
-position = Vector2(0, 10)
-texture = SubResource("AtlasTexture_ia84y")
-centered = false
-
 [node name="b_start" parent="." unique_id=657934791 node_paths=PackedStringArray("act_left") instance=ExtResource("7_t6bnd")]
+material = SubResource("ShaderMaterial_ia84y")
 position = Vector2(99, 108)
+texture = SubResource("AtlasTexture_6tl50")
 act_left = NodePath("../b_opt")
-selected = true
-
-[node name="sprite" parent="b_start" index="0" unique_id=1051098897]
-texture = SubResource("AtlasTexture_6at21")
+button_id = 0
 
 [node name="b_opt" parent="." unique_id=19098515 node_paths=PackedStringArray("act_right") instance=ExtResource("7_t6bnd")]
+material = SubResource("ShaderMaterial_6at21")
 position = Vector2(27, 108)
+texture = SubResource("AtlasTexture_t6bnd")
+act_interact = "res://main_menu/option_menu.tscn"
 act_right = NodePath("../b_start")
 on_spr = Rect2(0, 36, 36, 9)
 off_spr = Rect2(0, 45, 36, 9)
 trail_anim = "menu_opt"
-
-[node name="sprite" parent="b_opt" index="0" unique_id=1051098897]
-texture = SubResource("AtlasTexture_og6xe")
-
-[editable path="b_start"]
-[editable path="b_opt"]
+button_id = 1
+select_target_id = 0
