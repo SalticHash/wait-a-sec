@@ -18,18 +18,17 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	if last_time == ScrGlobal.level_time:
+		return
+	_play_clock_snd()
 	_update_number()
-	if last_time != ScrGlobal.level_time:
-		_play_clock_snd()
 	last_time = ScrGlobal.level_time
 
 
 func _update_number() -> void:
-	var str_time = str(ScrGlobal.level_time)
-	var units_digit = int(str_time[1]) if ScrGlobal.level_time > 9 else int(str_time[0])
-	var tens_digit = int(str_time[0]) if ScrGlobal.level_time > 9 else 0
-	$units.frame = units_digit
-	$tens.frame = tens_digit
+	$units.frame = ScrGlobal.level_time % 10
+	@warning_ignore("integer_division")
+	$tens.frame = ScrGlobal.level_time / 10
 
 
 func _play_clock_snd() -> void:
